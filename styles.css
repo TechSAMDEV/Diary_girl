@@ -51,7 +51,8 @@ nav.site-nav {
     height: 60px;
 }
 
-.nav-brand {
+.nav-brand a {
+    text-decoration: none;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-size: 17px;
@@ -59,14 +60,9 @@ nav.site-nav {
     color: var(--text-1)
 }
 
-.nav-brand a {
-    text-decoration: none;
+.nav-brand a:hover {
     color: var(--text-3);
     transition: color .2s;
-}
-
-.nav-brand a:hover {
-    color: var(--text-1)
 }
 
 .nav-links a {
@@ -568,7 +564,7 @@ nav.site-nav {
     white-space: nowrap
 }
 
-/* ── INSTRUCTORS ── */
+/* ── INSTRUCTORS + PROGRAMS (merged vertical slabs) ── */
 .instructors {
     background: var(--cream)
 }
@@ -577,370 +573,8 @@ nav.site-nav {
     font-size: 14px;
     color: var(--text-3);
     line-height: 1.8;
-    margin-bottom: 48px;
+    margin-bottom: 8px;
     max-width: 520px
-}
-
-.inst-grid-wrap {
-    background: rgba(61, 35, 20, 0.08)
-}
-
-.inst-card {
-    background: var(--cream);
-    padding: 32px 22px;
-    cursor: pointer;
-    transition: all .3s;
-    position: relative;
-    overflow: hidden;
-    height: 100%
-}
-
-.inst-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--espresso);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .35s
-}
-
-.inst-card:hover {
-    background: var(--ivory);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(42, 22, 12, 0.08)
-}
-
-.inst-card:hover::after {
-    transform: scaleX(1)
-}
-
-.inst-card.active {
-    background: var(--ivory);
-    box-shadow: 0 8px 32px rgba(42, 22, 12, 0.1)
-}
-
-.inst-card.active::after {
-    transform: scaleX(1)
-}
-
-.inst-av {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 26px;
-    color: var(--ivory);
-    border: 2px solid rgba(250, 247, 242, 0.3)
-}
-
-.av-abi {
-    background: linear-gradient(135deg, #5c3520, #9a6040)
-}
-
-.av-mary {
-    background: linear-gradient(135deg, #3d5c3a, #6a9460)
-}
-
-.av-malik {
-    background: linear-gradient(135deg, #3a3d5c, #6068a0)
-}
-
-.av-peter {
-    background: linear-gradient(135deg, #2c4a6b, #4a7ab5)
-}
-
-.av-doris {
-    background: linear-gradient(135deg, #7a3a5c, #b56090)
-}
-
-.inst-badge {
-    font-size: 8.5px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--ivory);
-    padding: 3px 9px;
-    display: inline-block;
-    margin-bottom: 10px
-}
-
-.b-lead {
-    background: var(--espresso)
-}
-
-.b-group {
-    background: var(--mocha)
-}
-
-.b-private {
-    background: var(--espresso-2)
-}
-
-.b-bonus {
-    background: var(--gold)
-}
-
-.inst-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 17px;
-    color: var(--text-1);
-    margin-bottom: 3px
-}
-
-.inst-role {
-    font-size: 11px;
-    color: var(--text-4);
-    margin-bottom: 10px;
-    font-weight: 500
-}
-
-.inst-about {
-    font-size: 12.5px;
-    color: var(--text-3);
-    line-height: 1.72;
-    margin-bottom: 12px
-}
-
-.inst-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-bottom: 12px
-}
-
-.inst-tag {
-    font-size: 10px;
-    padding: 3px 8px;
-    background: var(--greige);
-    color: var(--text-3)
-}
-
-.inst-tap {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--mocha)
-}
-
-.inst-detail {
-    display: none;
-    background: var(--ivory);
-    border-top: 1px solid rgba(61, 35, 20, 0.1);
-    padding: 48px;
-    animation: fadeIn .3s ease
-}
-
-.inst-detail.open {
-    display: block
-}
-
-.id-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--mocha);
-    margin-bottom: 10px
-}
-
-.id-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: var(--text-1);
-    margin-bottom: 16px;
-    line-height: 1.2
-}
-
-.id-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-left: 0
-}
-
-.id-list li {
-    font-size: 13.5px;
-    color: var(--text-3);
-    line-height: 1.65;
-    padding-left: 16px;
-    position: relative
-}
-
-.id-list li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--gold)
-}
-
-.id-sched {
-    margin-top: 18px
-}
-
-.id-day {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding: 9px 0;
-    border-bottom: 1px solid rgba(61, 35, 20, 0.07);
-    font-size: 13px
-}
-
-.id-day:last-child {
-    border-bottom: none
-}
-
-.id-day strong {
-    font-weight: 600;
-    color: var(--text-1);
-    min-width: 100px;
-    flex-shrink: 0
-}
-
-.id-day span {
-    color: var(--text-4)
-}
-
-.id-note {
-    margin-top: 16px;
-    padding: 14px 18px;
-    background: rgba(184, 150, 12, 0.07);
-    border-left: 2px solid var(--gold);
-    font-size: 13px;
-    color: var(--text-3);
-    line-height: 1.75
-}
-
-.id-bonus {
-    background: var(--greige);
-    padding: 20px 22px;
-    margin-top: 16px;
-    border-left: 3px solid var(--gold)
-}
-
-.id-bonus p {
-    font-size: 13px;
-    color: var(--text-3);
-    line-height: 1.75;
-    font-style: italic;
-    margin-bottom: 0
-}
-
-.id-close {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text-4);
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    padding: 0;
-    transition: color .2s
-}
-
-.id-close:hover {
-    color: var(--text-1)
-}
-
-/* ── PROGRAMS ── */
-.prog-grid-wrap {
-    background: rgba(61, 35, 20, 0.08);
-    margin-bottom: 48px
-}
-
-.prog-card {
-    background: var(--ivory);
-    padding: 36px 28px;
-    position: relative;
-    overflow: hidden;
-    transition: background .25s;
-    height: 100%
-}
-
-.prog-card:hover {
-    background: var(--cream)
-}
-
-.prog-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--espresso)
-}
-
-.pc-type {
-    font-size: 8.5px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--ivory);
-    padding: 3px 10px;
-    display: inline-block;
-    margin-bottom: 14px
-}
-
-.pc-type.grp {
-    background: var(--mocha)
-}
-
-.pc-type.prv {
-    background: var(--espresso)
-}
-
-.pc-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: var(--text-1);
-    margin-bottom: 10px
-}
-
-.pc-meta {
-    font-size: 13px;
-    color: var(--text-4);
-    line-height: 1.85;
-    margin-bottom: 18px
-}
-
-.pc-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 28px;
-    color: var(--text-1);
-    margin-bottom: 4px
-}
-
-.pc-early {
-    font-size: 11px;
-    color: var(--gold);
-    font-weight: 600;
-    display: block;
-    margin-bottom: 16px
-}
-
-.pc-orig {
-    text-decoration: line-through;
-    color: var(--taupe);
-    font-size: 18px;
-    margin-right: 6px
 }
 
 .cur-l {
@@ -967,6 +601,129 @@ nav.site-nav {
     background: var(--espresso);
     color: var(--ivory);
     border-color: var(--espresso)
+}
+
+.av-abi {
+    background: linear-gradient(135deg, #5c3520, #9a6040)
+}
+
+.av-mary {
+    background: linear-gradient(135deg, #3d5c3a, #6a9460)
+}
+
+.av-malik {
+    background: linear-gradient(135deg, #3a3d5c, #6068a0)
+}
+
+.av-peter {
+    background: linear-gradient(135deg, #2c4a6b, #4a7ab5)
+}
+
+.av-doris {
+    background: linear-gradient(135deg, #7a3a5c, #b56090)
+}
+
+/* one vertical "slab" per instructor */
+.islab {
+    max-width: 600px;
+    margin: 0 auto 48px;
+    background: var(--ivory);
+    border: 1px solid rgba(61, 35, 20, 0.08);
+    box-shadow: 0 20px 50px rgba(42, 22, 12, 0.07);
+    padding: 56px 44px;
+    text-align: center;
+}
+
+.islab-av {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--ivory);
+    border: 2px solid rgba(250, 247, 242, 0.3);
+}
+
+.islab-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--mocha);
+    margin-bottom: 14px
+}
+
+.islab-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    font-size: clamp(24px, 4vw, 32px);
+    color: var(--text-1);
+    margin-bottom: 8px;
+}
+
+.islab-role {
+    font-size: 12.5px;
+    color: var(--text-4);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.islab-rule {
+    width: 44px;
+    height: 1px;
+    background: var(--taupe);
+    margin: 0 auto 8px
+}
+
+.islab-row {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(61, 35, 20, 0.08);
+    font-size: 12.5px;
+    letter-spacing: .4px;
+    color: var(--text-3);
+    line-height: 1.6;
+}
+
+.islab-row strong {
+    color: var(--text-1);
+    font-weight: 600
+}
+
+.islab-fee-row {
+    padding: 22px 0 4px
+}
+
+.islab-fee {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--text-1);
+}
+
+.islab-fee .pc-orig {
+    text-decoration: line-through;
+    color: var(--taupe);
+    font-size: 20px;
+    margin-right: 6px
+}
+
+.islab-fee-note {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 8px
 }
 
 /* ── CURRICULUM ── */

@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Become a High-Value Data Professional | Diary of a Girl in Tech</title>
 
-  <link rel="stylesheet" href="styles.css">
-
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -19,12 +19,12 @@
     <div class="container-fluid px-4 h-100 d-flex align-items-center justify-content-between">
       <div class="nav-brand"><a href="#">Diary of a Girl in Tech</a></div>
       <div class="nav-links d-none d-md-flex gap-4">
-        <a href="#programs">Programs</a>
+        <a href="#instructors">Instructors &amp; Fees</a>
         <a href="#curriculum">Curriculum</a>
         <a href="#reviews">Reviews</a>
-        <a href="#instructors">Instructors</a>
         <a href="#faq">FAQs</a>
       </div>
+      <!-- <a href="#instructors" class="nav-cta d-none d-md-inline-block">Enroll Now</a> -->
       <button class="ham d-md-none" data-bs-toggle="collapse" data-bs-target="#mob-menu" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -32,10 +32,9 @@
   </nav>
   <div class="collapse mob-menu" id="mob-menu" style="position:fixed;top:60px;left:0;right:0;z-index:499;">
     <div class="px-4 py-2">
-      <a href="#programs">Programs</a>
+      <a href="#instructors">Instructors &amp; Fees</a>
       <a href="#curriculum">Curriculum</a>
       <a href="#reviews">Reviews</a>
-      <a href="#instructors">Instructors</a>
       <a href="#faq">FAQs</a>
     </div>
   </div>
@@ -50,7 +49,7 @@
         AI-powered workflows, gain career clarity, and confidently position yourself for high-paying jobs and business
         opportunities.</p>
       <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="#programs" class="btn-p">Explore Programs</a>
+        <a href="#instructors" class="btn-p">Explore Programs</a>
         <a href="#curriculum" class="btn-s">View Curriculum</a>
       </div>
     </div>
@@ -185,320 +184,136 @@
     </div>
   </section>
 
-  <!-- INSTRUCTORS -->
+  <!-- INSTRUCTORS + PROGRAMS (merged) -->
   <section class="sec instructors" id="instructors">
     <div class="container">
-      <div class="sec-eye">The Teaching Team</div>
-      <div class="inst-intro">
-        <div class="sec-title">You're not learning from<br>one instructor. You're<br>learning from a <em>team</em>.
-        </div>
-      </div>
-      <p class="inst-intro-sub">Pick the learning instructor that fits your goal. Every option follows the same proven
-        system.</p>
-
-      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-0 inst-grid-wrap">
-        <div class="col">
-          <div class="inst-card" id="ic-abi" onclick="openInst('abi')">
-            <div class="inst-av av-abi">A</div>
-            <span class="inst-badge b-lead">Lead &amp; Founder</span>
-            <div class="inst-name">Abigail Yashiyi</div>
-            <div class="inst-role">Lead Instructor</div>
-            <div class="inst-about">Microsoft-certified. 250+ students trained across 12+ countries. Leads onboarding
-              and weekly check-ins for all students.</div>
-            <div class="inst-tags"><span class="inst-tag">Excel</span><span class="inst-tag">Power BI</span><span
-                class="inst-tag">SQL</span><span class="inst-tag">Group</span></div>
-            <div class="inst-tap">View details →</div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="inst-card" id="ic-mary" onclick="openInst('mary')">
-            <div class="inst-av av-mary">M</div>
-            <span class="inst-badge b-group">Group Classes</span>
-            <div class="inst-name">Mary Ashiru</div>
-            <div class="inst-role">Data Instructor</div>
-            <div class="inst-about">Expert in Excel, Power BI, SQL and Python. Thorough, patient, and results-focused
-              with a strong track record.</div>
-            <div class="inst-tags"><span class="inst-tag">Excel</span><span class="inst-tag">Power BI</span><span
-                class="inst-tag">SQL</span><span class="inst-tag">Python</span></div>
-            <div class="inst-tap">View details →</div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="inst-card" id="ic-malik" onclick="openInst('malik')">
-            <div class="inst-av av-malik">M</div>
-            <span class="inst-badge b-bonus">Bonus Specialist</span>
-            <div class="inst-name">Malik</div>
-            <div class="inst-role">Automation Specialist</div>
-            <div class="inst-about">Expert in no-code automation and workflow systems. Teaches students how to build
-              automations that save hours every week.</div>
-            <div class="inst-tags"><span class="inst-tag">Make</span><span class="inst-tag">n8n</span><span
-                class="inst-tag">Airtable</span><span class="inst-tag">Bubble</span></div>
-            <div class="inst-tap">View details →</div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="inst-card" id="ic-peter" onclick="openInst('peter')">
-            <div class="inst-av av-peter">P</div>
-            <span class="inst-badge b-private">Private Classes</span>
-            <div class="inst-name">Peter Ayim</div>
-            <div class="inst-role">Data Analyst Instructor</div>
-            <div class="inst-about">Specialist in the full BI stack. Known for making SQL, Power BI and Excel concepts
-              practical, job-ready, and easy to apply.</div>
-            <div class="inst-tags"><span class="inst-tag">Excel</span><span class="inst-tag">Power BI</span><span
-                class="inst-tag">SQL</span><span class="inst-tag">Private</span></div>
-            <div class="inst-tap">View details →</div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="inst-card" id="ic-doris" onclick="openInst('doris')">
-            <div class="inst-av av-doris">D</div>
-            <span class="inst-badge b-bonus">Bonus Specialist</span>
-            <div class="inst-name">Doris Solomon</div>
-            <div class="inst-role">Prompt Engineering Specialist</div>
-            <div class="inst-about">Helps students use AI effectively for data analysis, research, productivity, and
-              business using ChatGPT, Claude, Gemini, and Perplexity.</div>
-            <div class="inst-tags"><span class="inst-tag">ChatGPT</span><span class="inst-tag">Claude</span><span
-                class="inst-tag">Gemini</span><span class="inst-tag">Perplexity</span></div>
-            <div class="inst-tap">View details →</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-0"
-        style="background:rgba(184,150,12,0.07);border-left:3px solid var(--gold);padding:20px 24px;font-size:13.5px;color:var(--text-3);line-height:1.8">
-        <strong style="color:var(--text-1)">Included at no extra cost:</strong> As part of your learning experience,
-        you'll also receive Automation and Prompt Engineering training from Malik and Doris Solomon to help you become a
-        more valuable and well-rounded data professional.
-      </div>
-
-      <!-- DETAIL PANELS -->
-      <div class="inst-detail" id="id-abi">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="id-label">What Abigail Teaches</div>
-            <div class="id-heading">Excel + Power BI + SQL<br>Group Class</div>
-            <ul class="id-list">
-              <li>Group class — maximum 5 students</li>
-              <li>Live on Google Meet · all sessions recorded</li>
-              <li>Duration: ~3 months + 1 week</li>
-              <li>Includes AI &amp; Automation bonus week</li>
-              <li>2 industry-specific portfolio projects</li>
-              <li>Weekly check-in every Friday 5:30PM</li>
-              <li>General onboarding session before classes start</li>
-            </ul>
-            <div class="d-flex gap-2 flex-wrap mt-3">
-              <button class="btn-p" onclick="openPayModal('Abigail Group — Excel + Power BI + SQL','₦215,000')">Enroll
-                &amp; Pay Now</button>
-            </div>
-          </div>
-          <div class="col">
-            <div class="id-label">Pricing</div>
-            <div class="id-heading" style="font-size:36px">₦215,000</div>
-            <p style="font-size:12px;color:var(--text-4);margin-top:4px;margin-bottom:16px">First 5 students pay
-              ₦200,000</p>
-            <div class="id-note">Payment goes directly to securing your spot. Once paid, you will receive onboarding
-              details and the group WhatsApp link within 24 hours.</div>
-          </div>
-        </div>
-        <button class="id-close" onclick="closeInst('abi')">✕ Close</button>
-      </div>
-
-      <div class="inst-detail" id="id-mary">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="id-label">What Mary Teaches</div>
-            <div class="id-heading">Excel + Power BI + SQL<br>Group Classes (×2) + Python Group</div>
-            <ul class="id-list">
-              <li><strong>Group Class A</strong> — Mon &amp; Wed · 2:00PM · 10 students max · ₦215,000</li>
-              <li><strong>Group Class B</strong> — Fri &amp; Sat · 7:30PM · 10 students max · ₦215,000</li>
-              <li><strong>Python Group</strong> — Mon, Tue &amp; Wed · 7:00PM · 5 students max · ₦350,000</li>
-              <li>All sessions live on Google Meet and recorded</li>
-              <li>Excel+Power BI+SQL: ~3 months + 1 week · Python: 10 weeks</li>
-              <li>2 industry portfolio projects per course</li>
-            </ul>
-            <div class="d-flex gap-2 flex-wrap mt-3">
-              <button class="btn-p"
-                onclick="openPayModal('Mary Group A — Excel+Power BI+SQL · Mon & Wed 2PM','₦215,000')">Group A —
-                Enroll</button>
-              <button class="btn-s"
-                onclick="openPayModal('Mary Group B — Excel+Power BI+SQL · Fri & Sat 7:30PM','₦215,000')">Group B —
-                Enroll</button>
-            </div>
-            <div class="mt-2">
-              <button class="btn-s" onclick="openPayModal('Mary Python Group · Mon Tue Wed 7PM','₦350,000')">Python
-                Group — Enroll</button>
-            </div>
-          </div>
-          <div class="col">
-            <div class="id-label">Class Schedules</div>
-            <div class="id-sched">
-              <div class="id-day"><strong>Group A Days</strong><span>Mon &amp; Wed · 2:00PM – 4:00PM</span></div>
-              <div class="id-day"><strong>Group B Days</strong><span>Fri &amp; Sat · 7:30PM</span></div>
-              <div class="id-day"><strong>Python Group</strong><span>Mon, Tue &amp; Wed · 7:00PM – 9:00PM</span></div>
-            </div>
-            <div class="id-note mt-4">First 5 students in each group pay ₦200,000. First 4 Python students pay ₦320,000.
-            </div>
-          </div>
-        </div>
-        <button class="id-close" onclick="closeInst('mary')">✕ Close</button>
-      </div>
-
-      <div class="inst-detail" id="id-malik">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="id-label">Automation Bonus Module</div>
-            <div class="id-heading">Build Workflows &amp; No-Code Systems</div>
-            <ul class="id-list">
-              <li>Power Automate — automate Microsoft workflows</li>
-              <li>Make (formerly Integromat) — connect apps and automate data tasks</li>
-              <li>n8n — open-source workflow automation</li>
-              <li>Airtable — build structured databases and workflows</li>
-              <li>Glide &amp; Bubble — no-code app and system building</li>
-              <li>3-day module in the final week of training</li>
-            </ul>
-          </div>
-          <div class="col">
-            <div class="id-label">Included As</div>
-            <div class="id-bonus">
-              <p><strong>Complimentary bonus</strong> — included in every Excel + Power BI + SQL program at no extra
-                cost. This module runs in the final week of training for all students.</p>
-            </div>
-          </div>
-        </div>
-        <button class="id-close" onclick="closeInst('malik')">✕ Close</button>
-      </div>
-
-      <div class="inst-detail" id="id-peter">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="id-label">What Peter Teaches</div>
-            <div class="id-heading">Excel + Power BI + SQL<br>Private Class</div>
-            <ul class="id-list">
-              <li>Private 1-on-1 — maximum 10 students this cohort</li>
-              <li>Live on Google Meet · all sessions recorded</li>
-              <li>Duration: ~3 months + 1 week</li>
-              <li>2 industry portfolio projects</li>
-              <li>₦320,000 (first 3 students pay ₦310,000)</li>
-              <li>After booking, choose: 2×90min sessions/week OR 1×150min session/week</li>
-            </ul>
-            <div class="id-note">Book your first 15 available slots via Calendly. After your first session, a new
-              booking link is sent every Sunday for the following week.</div>
-            <div class="mt-3">
-              <button class="btn-p" onclick="alert('Replace with your Calendly link for Peter')">Book First Session via
-                Calendly →</button>
-            </div>
-          </div>
-          <div class="col">
-            <div class="id-label">Peter's Available Days</div>
-            <div class="id-sched">
-              <div class="id-day"><strong>Monday</strong><span>7:30PM · 9:30PM</span></div>
-              <div class="id-day"><strong>Tuesday</strong><span>7:00PM · 9:00PM</span></div>
-              <div class="id-day"><strong>Friday</strong><span>10:00AM</span></div>
-              <div class="id-day"><strong>Saturday</strong><span>10:00AM</span></div>
-              <div class="id-day"><strong>Sunday</strong><span>12:00PM · 3:00PM (intensive)</span></div>
-            </div>
-            <div class="id-note mt-3">Each slot is 90 minutes. Intensive option books two consecutive slots (150 min, 2
-              topics in one sitting).</div>
-          </div>
-        </div>
-        <button class="id-close" onclick="closeInst('peter')">✕ Close</button>
-      </div>
-
-      <div class="inst-detail" id="id-doris">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="id-label">Prompt Engineering Bonus Module</div>
-            <div class="id-heading">Use AI Like a<br>Professional Analyst</div>
-            <ul class="id-list">
-              <li>ChatGPT — write SQL, Python, DAX and Excel formulas using prompts</li>
-              <li>Claude — long documents, reports, data summaries and professional writing</li>
-              <li>Gemini — Google Workspace integration, research and data context</li>
-              <li>Perplexity — sourced research, benchmarks and industry data</li>
-              <li>Data privacy compliance — what never to share with AI tools</li>
-              <li>Build a personal prompt library for daily analyst use</li>
-              <li>2-day module in the final week of training</li>
-            </ul>
-          </div>
-          <div class="col">
-            <div class="id-label">Included As</div>
-            <div class="id-bonus">
-              <p><strong>Complimentary bonus</strong> — included in every Excel + Power BI + SQL program at no extra
-                cost. Runs alongside the Automation module in the final week of training.</p>
-            </div>
-          </div>
-        </div>
-        <button class="id-close" onclick="closeInst('doris')">✕ Close</button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROGRAMS -->
-  <section class="sec programs" id="programs">
-    <div class="container">
-      <div class="sec-eye">Enrollment</div>
-      <div class="sec-title">Choose Your <em>Program</em></div>
-      <div class="sec-rule"></div>
-      <div class="d-flex gap-2 flex-wrap align-items-center mb-4">
+      <div class="sec-eye text-center">The Teaching Team &amp; Enrollment</div>
+      <div class="sec-title text-center">Meet Your <em>Instructor</em></div>
+      <p class="inst-intro-sub mx-auto text-center">Pick the instructor whose schedule and style fit your goal. Each
+        slab below shows exactly what they teach, how it runs, and what it costs.</p>
+      <div class="d-flex gap-2 flex-wrap align-items-center justify-content-center mb-5">
         <span class="cur-l">Price in</span>
         <button class="cur-btn active" onclick="setCur('NGN',this)">₦ Naira</button>
         <button class="cur-btn" onclick="setCur('USD',this)">$ Dollar</button>
         <button class="cur-btn" onclick="setCur('EUR',this)">€ Euro</button>
         <button class="cur-btn" onclick="setCur('GBP',this)">£ Pounds</button>
       </div>
-      <div class="row row-cols-1 row-cols-md-2 g-0 prog-grid-wrap">
-        <div class="col">
-          <div class="prog-card">
-            <span class="pc-type grp">Group · 5 spots</span>
-            <div class="pc-name">Abigail's Group<br>Excel + Power BI + SQL</div>
-            <div class="pc-meta">~3 months + 1 week · Google Meet<br>Includes AI &amp; Automation bonus week<br>2
-              portfolio projects · Sessions recorded</div>
-            <div class="pc-price" data-ngn="215000" data-disc="200000" data-n="5"><span class="pv">₦215,000</span><span
-                class="pc-early">First 5 students pay ₦200,000</span></div>
-            <button class="btn-p w-100 mt-2"
-              onclick="openPayModal('Abigail Group — Excel + Power BI + SQL','₦215,000')">Enroll Now</button>
-          </div>
+
+      <!-- ABIGAIL -->
+      <div class="islab">
+        <div class="islab-av av-abi">A</div>
+        <div class="islab-eyebrow">Lead &amp; Founder</div>
+        <div class="islab-title">Abigail Yashiyi</div>
+        <div class="islab-role">Microsoft-certified · 250+ students trained across 12+ countries</div>
+        <div class="islab-rule"></div>
+        <div class="islab-row">Excel + Power BI + SQL — Group Class</div>
+        <div class="islab-row">Group class · maximum 5 students</div>
+        <div class="islab-row">Live on Google Meet · all sessions recorded</div>
+        <div class="islab-row">~3 months + 1 week · includes AI &amp; Automation bonus week</div>
+        <div class="islab-row">2 industry-specific portfolio projects</div>
+        <div class="islab-row">Weekly check-in every Friday 5:30PM</div>
+        <div class="islab-fee-row">
+          <div class="islab-fee pc-price" data-ngn="215000" data-disc="200000" data-n="5"><span
+              class="pv">₦215,000</span></div>
+          <div class="islab-fee-note">First 5 students pay ₦200,000</div>
         </div>
-        <div class="col">
-          <div class="prog-card">
-            <span class="pc-type grp">Group · 10 spots each</span>
-            <div class="pc-name">Mary's Groups A &amp; B<br>Excel + Power BI + SQL</div>
-            <div class="pc-meta">Group A: Mon &amp; Wed · 2PM<br>Group B: Fri &amp; Sat · 7:30PM<br>~3 months + 1 week ·
-              2 portfolio projects</div>
-            <div class="pc-price" data-ngn="215000" data-disc="200000" data-n="5"><span class="pv">₦215,000</span><span
-                class="pc-early">First 5 per group pay ₦200,000</span></div>
-            <div class="d-flex gap-2 flex-wrap mt-2">
-              <button class="btn-p flex-fill" onclick="openPayModal('Mary Group A','₦215,000')">Group A</button>
-              <button class="btn-s flex-fill" onclick="openPayModal('Mary Group B','₦215,000')">Group B</button>
-            </div>
-          </div>
+        <button class="btn-p mt-3" onclick="openPayModal('Abigail Group — Excel + Power BI + SQL','₦215,000')">Enroll
+          &amp; Pay Now</button>
+      </div>
+
+      <!-- MARY -->
+      <div class="islab">
+        <div class="islab-av av-mary">M</div>
+        <div class="islab-eyebrow">Group Classes</div>
+        <div class="islab-title">Mary Ashiru</div>
+        <div class="islab-role">Expert in Excel, Power BI, SQL and Python · thorough and results-focused</div>
+        <div class="islab-rule"></div>
+        <div class="islab-row"><strong>Group A</strong> — Excel + Power BI + SQL · Mon &amp; Wed · 2:00PM · 10 students
+          max</div>
+        <div class="islab-fee-row">
+          <div class="islab-fee pc-price" data-ngn="215000" data-disc="200000" data-n="5"><span
+              class="pv">₦215,000</span></div>
+          <div class="islab-fee-note">First 5 students pay ₦200,000</div>
         </div>
-        <div class="col">
-          <div class="prog-card">
-            <span class="pc-type grp">Group · 5 spots</span>
-            <div class="pc-name">Mary's Python<br>Group Class</div>
-            <div class="pc-meta">Mon, Tue &amp; Wed · 7:00PM<br>10 weeks · Google Meet<br>2 portfolio projects ·
-              Sessions recorded</div>
-            <div class="pc-price" data-ngn="350000" data-disc="320000" data-n="4"><span
-                class="pc-orig pv-orig">₦350,000</span><span class="pv">₦320,000</span><span class="pc-early">First 4
-                students pay ₦320,000</span></div>
-            <button class="btn-p w-100 mt-2" onclick="openPayModal('Mary Python Group','₦350,000')">Enroll Now</button>
-          </div>
+        <button class="btn-p mt-2 mb-4"
+          onclick="openPayModal('Mary Group A — Excel+Power BI+SQL · Mon & Wed 2PM','₦215,000')">Group A —
+          Enroll</button>
+
+        <div class="islab-row"><strong>Group B</strong> — Excel + Power BI + SQL · Fri &amp; Sat · 7:30PM · 10 students
+          max</div>
+        <div class="islab-fee-row">
+          <div class="islab-fee pc-price" data-ngn="215000" data-disc="200000" data-n="5"><span
+              class="pv">₦215,000</span></div>
+          <div class="islab-fee-note">First 5 students pay ₦200,000</div>
         </div>
-        <div class="col">
-          <div class="prog-card">
-            <span class="pc-type prv">Private · 10 spots</span>
-            <div class="pc-name">Peter's Private Class<br>Excel + Power BI + SQL</div>
-            <div class="pc-meta">1-on-1 · Your chosen schedule<br>~3 months + 1 week · Google Meet<br>Book via Calendly
-              · First 15 slots shown</div>
-            <div class="pc-price" data-ngn="320000" data-disc="310000" data-n="3"><span
-                class="pc-orig pv-orig">₦320,000</span><span class="pv">₦310,000</span><span class="pc-early">First 3
-                students pay ₦310,000</span></div>
-            <button class="btn-p w-100 mt-2" onclick="alert('Replace with your Calendly booking link for Peter')">Book
-              via Calendly →</button>
-          </div>
+        <button class="btn-s mt-2 mb-4"
+          onclick="openPayModal('Mary Group B — Excel+Power BI+SQL · Fri & Sat 7:30PM','₦215,000')">Group B —
+          Enroll</button>
+
+        <div class="islab-row"><strong>Python Group</strong> — Mon, Tue &amp; Wed · 7:00PM · 5 students max · 10 weeks
+        </div>
+        <div class="islab-fee-row">
+          <div class="islab-fee pc-price" data-ngn="350000" data-disc="320000" data-n="4"><span
+              class="pc-orig pv-orig">₦350,000</span> <span class="pv">₦320,000</span></div>
+          <div class="islab-fee-note">First 4 students pay ₦320,000</div>
+        </div>
+        <button class="btn-s mt-2" onclick="openPayModal('Mary Python Group · Mon Tue Wed 7PM','₦350,000')">Python Group
+          — Enroll</button>
+      </div>
+
+      <!-- PETER -->
+      <div class="islab">
+        <div class="islab-av av-peter">P</div>
+        <div class="islab-eyebrow">Private Classes</div>
+        <div class="islab-title">Peter Ayim</div>
+        <div class="islab-role">Specialist in the full BI stack · practical, job-ready teaching</div>
+        <div class="islab-rule"></div>
+        <div class="islab-row">Excel + Power BI + SQL — Private 1-on-1</div>
+        <div class="islab-row">Maximum 10 students this cohort</div>
+        <div class="islab-row">~3 months + 1 week · 2 portfolio projects</div>
+        <div class="islab-row">2×90min sessions/week OR 1×150min session/week</div>
+        <div class="islab-row">Book via Calendly · first 15 slots shown, refreshed weekly</div>
+        <div class="islab-fee-row">
+          <div class="islab-fee pc-price" data-ngn="320000" data-disc="310000" data-n="3"><span
+              class="pc-orig pv-orig">₦320,000</span> <span class="pv">₦310,000</span></div>
+          <div class="islab-fee-note">First 3 students pay ₦310,000</div>
+        </div>
+        <button class="btn-p mt-3" onclick="alert('Replace with your Calendly booking link for Peter')">Book via
+          Calendly →</button>
+      </div>
+
+      <!-- MALIK -->
+      <div class="islab">
+        <div class="islab-av av-malik">M</div>
+        <div class="islab-eyebrow">Bonus Specialist</div>
+        <div class="islab-title">Malik</div>
+        <div class="islab-role">Automation Specialist — no-code workflows &amp; systems</div>
+        <div class="islab-rule"></div>
+        <div class="islab-row">Power Automate, Make, n8n, Airtable, Glide &amp; Bubble</div>
+        <div class="islab-row">Build automations that save hours every week</div>
+        <div class="islab-row">3-day module in the final week of training</div>
+        <div class="islab-fee-row">
+          <div class="islab-fee">Included</div>
+          <div class="islab-fee-note">Complimentary bonus for every Excel + Power BI + SQL student</div>
         </div>
       </div>
+
+      <!-- DORIS -->
+      <div class="islab">
+        <div class="islab-av av-doris">D</div>
+        <div class="islab-eyebrow">Bonus Specialist</div>
+        <div class="islab-title">Doris Solomon</div>
+        <div class="islab-role">Prompt Engineering Specialist — using AI like a professional analyst</div>
+        <div class="islab-rule"></div>
+        <div class="islab-row">ChatGPT, Claude, Gemini &amp; Perplexity for analyst workflows</div>
+        <div class="islab-row">Data privacy compliance with AI tools</div>
+        <div class="islab-row">Build a personal prompt library · 2-day module, final week</div>
+        <div class="islab-fee-row">
+          <div class="islab-fee">Included</div>
+          <div class="islab-fee-note">Complimentary bonus for every Excel + Power BI + SQL student</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -756,7 +571,7 @@
       <div class="sec-title">Your <em>Data Career</em><br>Starts Here</div>
       <p class="mx-auto">Spots are limited across all programs. Once a class is full, it closes. Don't wait until after
         it's gone.</p>
-      <a href="#programs" class="btn-p">View All Programs</a>
+      <a href="#instructors" class="btn-p">View All Programs</a>
     </div>
   </section>
 
@@ -801,9 +616,9 @@
     // COUNTER
     function animateCounter() {
       let n = 0; const el = document.getElementById('counter');
-      const t = setInterval(() => {n += 3; if (n >= 250) {n = 250; clearInterval(t)} el.textContent = n}, 20);
+      const t = setInterval(() => { n += 3; if (n >= 250) { n = 250; clearInterval(t) } el.textContent = n }, 20);
     }
-    const obs = new IntersectionObserver(e => {if (e[0].isIntersecting) {animateCounter(); obs.disconnect()} }, {threshold: .3});
+    const obs = new IntersectionObserver(e => { if (e[0].isIntersecting) { animateCounter(); obs.disconnect() } }, { threshold: .3 });
     const cEl = document.getElementById('counter'); if (cEl) obs.observe(cEl);
 
     // COUNTRIES
@@ -814,22 +629,9 @@
       ci.innerHTML = full + full;
     }
 
-    // INSTRUCTORS
-    function openInst(id) {
-      document.querySelectorAll('.inst-detail').forEach(d => d.classList.remove('open'));
-      document.querySelectorAll('.inst-card').forEach(c => c.classList.remove('active'));
-      document.getElementById('id-' + id).classList.add('open');
-      document.getElementById('ic-' + id).classList.add('active');
-      setTimeout(() => document.getElementById('id-' + id).scrollIntoView({behavior: 'smooth', block: 'nearest'}), 50);
-    }
-    function closeInst(id) {
-      document.getElementById('id-' + id).classList.remove('open');
-      document.getElementById('ic-' + id).classList.remove('active');
-    }
-
     // CURRENCY
-    const RATES = {NGN: 1, USD: 1540, EUR: 1680, GBP: 1940};
-    const SYMS = {NGN: '₦', USD: '$', EUR: '€', GBP: '£'};
+    const RATES = { NGN: 1, USD: 1540, EUR: 1680, GBP: 1940 };
+    const SYMS = { NGN: '₦', USD: '$', EUR: '€', GBP: '£' };
     let ACR = 'NGN';
     function setCur(cur, btn) {
       ACR = cur;
@@ -874,7 +676,7 @@
       const n = document.getElementById('pf-name').value.trim();
       const e = document.getElementById('pf-email').value.trim();
       const p = document.getElementById('pf-phone').value.trim();
-      if (!n || !e || !p) {alert('Please fill in all fields.'); return }
+      if (!n || !e || !p) { alert('Please fill in all fields.'); return }
       alert('Redirecting to secure payment...\n\nReplace this with your Paystack or Flutterwave payment link.');
     }
   </script>
