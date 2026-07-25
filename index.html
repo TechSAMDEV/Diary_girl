@@ -108,6 +108,25 @@
         <p class="reach-text">Our expertise has reached aspiring and professional data analysts across these countries.
         </p>
       </div>
+
+      <div class="countdown-wrap">
+        <div class="countdown-label">Registration Closes In</div>
+        <div class="countdown-grid">
+          <div class="countdown-box">
+            <div class="countdown-num" id="cd-days">--</div>
+            <div class="countdown-unit">Days</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="cd-hours">--</div>
+            <div class="countdown-unit">Hours</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="cd-mins">--</div>
+            <div class="countdown-unit">Minutes</div>
+          </div>
+        </div>
+        <p class="countdown-note" id="countdown-note">Registration closes 12 August 2026</p>
+      </div>
     </div>
   </section>
 
@@ -127,6 +146,18 @@
               <div class="vid-type">Video Review</div>
               <div class="vid-name">Chidimma A.</div>
               <div class="vid-detail">Excel &amp; Power BI · Lagos, Nigeria</div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="vid-card" onclick="alert('Add video link here')">
+            <div class="vid-thumb">
+              <div class="vplay">▶</div>
+            </div>
+            <div class="vid-meta">
+              <div class="vid-type">Video Review</div>
+              <div class="vid-name">Tobi R.</div>
+              <div class="vid-detail">Power BI · Dubai, UAE</div>
             </div>
           </div>
         </div>
@@ -165,18 +196,6 @@
                 <div class="v-fill" style="width:58%"></div>
               </div>
               <span class="v-dur">1:05</span>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="vid-card" onclick="alert('Add video link here')">
-            <div class="vid-thumb">
-              <div class="vplay">▶</div>
-            </div>
-            <div class="vid-meta">
-              <div class="vid-type">Video Review</div>
-              <div class="vid-name">Tobi R.</div>
-              <div class="vid-detail">Power BI · Dubai, UAE</div>
             </div>
           </div>
         </div>
@@ -628,6 +647,31 @@
       const full = [...countries, ...countries].map(c => `<span class="country-item">${c}</span><span class="country-sep">·</span>`).join('');
       ci.innerHTML = full + full;
     }
+
+    // COUNTDOWN — registration closes 12 August 2026, 11:59:59 PM
+    const REG_CLOSE = new Date('2026-08-12T23:59:59');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = REG_CLOSE - now;
+      const dEl = document.getElementById('cd-days');
+      const hEl = document.getElementById('cd-hours');
+      const mEl = document.getElementById('cd-mins');
+      const noteEl = document.getElementById('countdown-note');
+      if (!dEl) return;
+      if (diff <= 0) {
+        dEl.textContent = '0'; hEl.textContent = '0'; mEl.textContent = '0';
+        if (noteEl) noteEl.textContent = 'Registration is now closed';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      dEl.textContent = days;
+      hEl.textContent = hours;
+      mEl.textContent = mins;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 60000); // refresh every minute
 
     // CURRENCY
     const RATES = { NGN: 1, USD: 1540, EUR: 1680, GBP: 1940 };
