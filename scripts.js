@@ -37,7 +37,7 @@ function updateCountdown() {
     mEl.textContent = mins;
 }
 updateCountdown();
-setInterval(updateCountdown, 60000); // refresh every minute
+setInterval(updateCountdown, 60000);
 
 // CURRENCY
 const RATES = { NGN: 1, USD: 1540, EUR: 1680, GBP: 1940 };
@@ -74,7 +74,7 @@ function toggleFaq(btn) {
     if (!open) item.classList.add('open');
 }
 
-// MODAL (Bootstrap modal instance)
+// MODAL
 const payModalEl = document.getElementById('pay-modal');
 const payModal = new bootstrap.Modal(payModalEl);
 function openPayModal(label, price) {
@@ -86,6 +86,6 @@ function handlePay() {
     const n = document.getElementById('pf-name').value.trim();
     const e = document.getElementById('pf-email').value.trim();
     const p = document.getElementById('pf-phone').value.trim();
-    if (!n || !e || !p) { alert('Please fill in all fields.'); return }
+    if (!n || !e || !p) { alert('Please fill in all fields.'); return; }
     alert('Redirecting to secure payment...\n\nReplace this with your Paystack or Flutterwave payment link.');
 }
