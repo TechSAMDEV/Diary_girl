@@ -108,11 +108,7 @@ nav.site-nav {
     gap: 24px;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid var(--taupe);
-    border-radius: 20px;
-    padding: 12px 0;
-    width: 95%;
-    box-shadow: 1px 2px 5px var(--espresso-2);
+    padding: 10px 0;
     margin-top: 15px;
     transition: opacity 1s ease-out, transform 0.8s ease-out;
 }
