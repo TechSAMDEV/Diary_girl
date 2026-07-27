@@ -6,6 +6,20 @@ function animateCounter() {
 const obs = new IntersectionObserver(e => { if (e[0].isIntersecting) { animateCounter(); obs.disconnect() } }, { threshold: .3 });
 const cEl = document.getElementById('counter'); if (cEl) obs.observe(cEl);
 
+// FADE-IN OBSERVER
+const fadeInObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in-section').forEach(section => {
+    fadeInObserver.observe(section);
+});
+
 // COUNTRIES
 const countries = ['United Kingdom', 'United States', 'China', 'Russia', 'Canada', 'Ireland', 'Nigeria', 'Lithuania', 'Poland', 'Portugal', 'Netherlands', 'Germany'];
 const ci = document.getElementById('countries-inner');
@@ -53,20 +67,18 @@ function setCur(cur, btn) {
         const disc = parseInt(el.dataset.disc || 0);
         const n = parseInt(el.dataset.n || 0);
         const pv = el.querySelector('.pv');
-        const po = el.querySelector('.pv-orig');
         if (pv) pv.textContent = sym + Math.round((n > 0 ? disc : ngn) / RATES[cur]).toLocaleString();
-        if (po) po.textContent = sym + Math.round(ngn / RATES[cur]).toLocaleString();
     });
 }
 
-// CURRICULUM
+// CURRICULUM ACCORDION
 function toggleCurr(card) {
     const open = card.classList.contains('open');
     document.querySelectorAll('.curr-card').forEach(c => c.classList.remove('open'));
     if (!open) card.classList.add('open');
 }
 
-// FAQ
+// FAQ ACCORDION
 function toggleFaq(btn) {
     const item = btn.parentElement;
     const open = item.classList.contains('open');
@@ -74,7 +86,7 @@ function toggleFaq(btn) {
     if (!open) item.classList.add('open');
 }
 
-// MODAL
+// MODAL HANDLING
 const payModalEl = document.getElementById('pay-modal');
 const payModal = new bootstrap.Modal(payModalEl);
 function openPayModal(label, price) {
