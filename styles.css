@@ -19,6 +19,10 @@
     --bs-body-font-family: 'DM Sans', sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -49,7 +53,7 @@ nav.site-nav {
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(61, 35, 20, 0.08);
     box-shadow: 5px 10px 20px rgba(36, 18, 9, 0.04);
-    padding: 10px 0 14px;
+    padding: 20px 0;
 }
 
 .nav-content-wrap {
@@ -80,13 +84,13 @@ nav.site-nav {
     justify-content: center;
     border: 1px solid var(--taupe);
     border-radius: 20px;
-    padding: 10px;
+    padding: 12px 0;
     width: 80%;
-    box-shadow: 2px 3px 5px var(--espresso-2);
+    box-shadow: 1px 2px 5px var(--espresso-2);
 }
 
 .nav-links a {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 500;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -110,7 +114,6 @@ nav.site-nav {
 }
 
 .hero::before {
-    content: 'DIARY OF A GIRL IN TECH';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -989,14 +992,6 @@ footer {
     background: var(--espresso-2);
     padding: 52px 0;
     text-align: center;
-}
-
-.footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 19px;
-    color: var(--gold-l);
-    margin-bottom: 10px;
 }
 
 footer p {
