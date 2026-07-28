@@ -612,6 +612,41 @@ nav.site-nav {
     text-align: center;
 }
 
+.islab .abi_pic {
+    background: url('./media/abigail_pic.jpeg') center no-repeat;
+    background-size: cover;
+    width: 60%;
+    margin: auto;
+}
+
+.islab .mary_pic {
+    background: url('./media/mary_pic.jpeg') center no-repeat;
+    background-size: cover;
+    width: 60%;
+    margin: auto;
+}
+
+.islab .doris_pic {
+    background: url('./media/doris_pic.jpeg') center no-repeat;
+    background-size: cover;
+    width: 80%;
+    margin: auto;
+}
+
+.islab .peter_pic {
+    background: url('./media/peter_pic.jpeg') center no-repeat;
+    background-size: cover;
+    width: 50%;
+    margin: auto;
+}
+
+.islab .adul_pic {
+    background: url('./media/adul_pic.jpeg') center no-repeat;
+    background-size: cover;
+    width: 50%;
+    margin: auto;
+}
+
 .islab.mary-slab,
 .islab.peter-slab {
     max-width: 440px;
