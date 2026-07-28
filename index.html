@@ -13,8 +13,8 @@
 
 <body>
 
-  <!-- NAV -->
-  <nav class="site-nav">
+  <!-- NAV (Fixed: added fade-in-section class so observer animates it into view) -->
+  <nav class="site-nav fade-in-section">
     <div class="container-fluid px-3 text-center">
       <div class="nav-content-wrap">
         <div class="nav-links">
@@ -124,22 +124,32 @@
       <div class="reviews-slab">
         <!-- Review Group 1 -->
         <div class="review-card-group">
-          <div class="mini-vid-box" onclick="alert('Add video link here')">
-            <div class="mini-vplay">▶</div>
+          <!-- Video Box with Embedded HTML5 Video -->
+          <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
+            <video id="vid-1" controls preload="metadata"
+              style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
+              onerror="console.log('Video 1 failed to load')">
+              <source src="./mps/vid_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div class="mini-vid-info">
-            <div class="mini-vid-title">Chidimma A.</div>
-            <div class="mini-vid-detail">Excel &amp; Power BI · Lagos, Nigeria</div>
+            <div class="mini-vid-title">Gift.</div>
+            <div class="mini-vid-detail">Nigeria</div>
           </div>
+
+          <!-- Voice Note Box with Working Audio Player -->
           <div class="mini-voice-box">
             <div class="mini-v-av" style="background:linear-gradient(135deg,#5c3520,#9a6040)">A</div>
             <div class="mini-v-content">
               <div class="mini-v-head">
-                <span class="mini-v-name">Amaka O.</span>
-                <span class="mini-v-loc">Abuja</span>
+                <span class="mini-v-name">Chisome</span>
+                <span class="mini-v-loc">Ireland</span>
               </div>
+              <audio id="audio-amaka" preload="none" src="./mps/voice_note1.mp4"></audio>
               <div class="mini-v-player">
-                <button class="mini-v-play" onclick="alert('Add audio link')">▶</button>
+                <button class="mini-v-play"
+                  onclick="let a = document.getElementById('audio-amaka'); a.paused ? a.play() : a.pause();">▶</button>
                 <div class="mini-v-bar">
                   <div class="mini-v-fill" style="width:40%"></div>
                 </div>
@@ -151,22 +161,32 @@
 
         <!-- Review Group 2 -->
         <div class="review-card-group mb-0">
-          <div class="mini-vid-box" onclick="alert('Add video link here')">
-            <div class="mini-vplay">▶</div>
+          <!-- Video Box with Embedded HTML5 Video -->
+          <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
+            <video id="vid-2" controls preload="metadata"
+              style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
+              onerror="console.log('Video 2 failed to load')">
+              <source src="./mps/vid_2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div class="mini-vid-info">
-            <div class="mini-vid-title">Tobi R.</div>
-            <div class="mini-vid-detail">Power BI · Dubai, UAE</div>
+            <div class="mini-vid-title">Olusayo</div>
+            <div class="mini-vid-detail">Dubai, UAE</div>
           </div>
+
+          <!-- Voice Note Box with Working Audio Player -->
           <div class="mini-voice-box">
             <div class="mini-v-av" style="background:linear-gradient(135deg,#3d5c3a,#6a9460)">B</div>
             <div class="mini-v-content">
               <div class="mini-v-head">
-                <span class="mini-v-name">Blessing N.</span>
-                <span class="mini-v-loc">London</span>
+                <span class="mini-v-name">Stephanie </span>
+                <span class="mini-v-loc">United Kingdom</span>
               </div>
+              <audio id="audio-blessing" preload="none" src="./mps/voice_note2.mp4"></audio>
               <div class="mini-v-player">
-                <button class="mini-v-play" onclick="alert('Add audio link')">▶</button>
+                <button class="mini-v-play"
+                  onclick="let a = document.getElementById('audio-blessing'); a.paused ? a.play() : a.pause();">▶</button>
                 <div class="mini-v-bar">
                   <div class="mini-v-fill" style="width:58%"></div>
                 </div>
@@ -338,14 +358,11 @@
             </div>
             <div class="curr-body">
               <div class="row row-cols-1 row-cols-md-2 curr-body-inner">
-                <div class="col curr-item">Spreadsheet fundamentals &amp; navigation</div>
-                <div class="col curr-item">Formulas: SUM, IF, VLOOKUP, XLOOKUP, INDEX/MATCH</div>
-                <div class="col curr-item">Data cleaning &amp; transformation</div>
-                <div class="col curr-item">PivotTables &amp; PivotCharts</div>
-                <div class="col curr-item">Conditional formatting &amp; data validation</div>
-                <div class="col curr-item">Dashboard design &amp; reporting</div>
-                <div class="col curr-item">Real industry dataset practice</div>
-                <div class="col curr-item">2 portfolio projects</div>
+                <div class="col curr-item">Retail &amp; E-commerce (Excel Fundamentals) </div>
+                <div class="col curr-item">Banking &amp; FinTech (Data Cleaning &amp; Preparation) </div>
+                <div class="col curr-item">Healthcare (Logical Functions &amp; Business Analysis) </div>
+                <div class="col curr-item">Supply Chain &amp; Logistics (Pivot Tables, Charts &amp; Dashboards) </div>
+                <div class="col curr-item"> SaaS (Executive Capstone Project)</div>
               </div>
             </div>
           </div>
@@ -363,14 +380,15 @@
             </div>
             <div class="curr-body">
               <div class="row row-cols-1 row-cols-md-2 curr-body-inner">
-                <div class="col curr-item">Power BI Desktop interface &amp; navigation</div>
-                <div class="col curr-item">Connecting &amp; transforming data (Power Query)</div>
-                <div class="col curr-item">Data modelling &amp; relationships</div>
-                <div class="col curr-item">DAX formulas &amp; measures</div>
-                <div class="col curr-item">Interactive dashboards &amp; reports</div>
-                <div class="col curr-item">KPIs, drill-throughs &amp; bookmarks</div>
-                <div class="col curr-item">Publishing to Power BI Service</div>
-                <div class="col curr-item">2 portfolio projects</div>
+                <div class="col curr-item">Retail &amp; E-commerce (Power BI Fundamentals &amp; Connecting to Data)
+                </div>
+                <div class="col curr-item"> Banking &amp; FinTech (Power Query, Data Cleaning &amp; Data Transformation)
+                </div>
+                <div class="col curr-item">Healthcare (Data Modelling, Relationships, Star Schema &amp; DAX
+                  Calculations) </div>
+                <div class="col curr-item">Supply Chain &amp; Logistics (Interactive Dashboards, KPI Reporting &amp;
+                  Data Storytelling) </div>
+                <div class="col curr-item">SaaS (Executive Dashboard, Power BI Service &amp; Capstone Project)</div>
               </div>
             </div>
           </div>
@@ -388,14 +406,15 @@
             </div>
             <div class="curr-body">
               <div class="row row-cols-1 row-cols-md-2 curr-body-inner">
-                <div class="col curr-item">Database fundamentals &amp; MySQL setup</div>
-                <div class="col curr-item">SELECT, WHERE, GROUP BY, ORDER BY</div>
-                <div class="col curr-item">JOINs: INNER, LEFT, RIGHT, FULL</div>
-                <div class="col curr-item">Subqueries &amp; CTEs</div>
-                <div class="col curr-item">Window functions for analytics</div>
-                <div class="col curr-item">Data extraction for reporting</div>
-                <div class="col curr-item">Real business query practice</div>
-                <div class="col curr-item">2 portfolio projects</div>
+                <div class="col curr-item">Retail &amp; E-commerce (Database Fundamentals &amp; SQL Basics)</div>
+                <div class="col curr-item"> Banking &amp; FinTech (Data Retrieval, Filtering &amp; Data Exploration)
+                </div>
+                <div class="col curr-item">Healthcare (Business Analysis with SQL, Aggregations &amp; CASE Statements)
+                </div>
+                <div class="col curr-item">Supply Chain &amp; Logistics (Advanced SQL, Joins, CTEs, Window Functions
+                  &amp;
+                  Multi-Table Analysis) </div>
+                <div class="col curr-item">SaaS (Executive Business Case Study &amp; SQL Capstone Project)</div>
               </div>
             </div>
           </div>

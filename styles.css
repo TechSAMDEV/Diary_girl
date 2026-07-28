@@ -58,12 +58,10 @@ button {
 /* ── NAV ANIMATION OVERRIDE ── */
 nav.site-nav {
     transform: translateY(-20px);
-    /* Starts slightly above */
 }
 
 nav.site-nav.is-visible {
     transform: translateY(0);
-    /* Settles into original position */
 }
 
 /* ── NAV ── */
@@ -79,7 +77,6 @@ nav.site-nav {
     box-shadow: 5px 10px 20px rgba(36, 18, 9, 0.04);
     padding: 20px 0;
     transition: opacity 0.9s ease-out, transform 0.8s ease-out;
-    /* Smooth transition added */
 }
 
 .nav-content-wrap {
@@ -425,27 +422,8 @@ nav.site-nav {
     position: absolute;
     inset: 0;
     background: rgba(42, 22, 12, 0.15);
-}
-
-.mini-vplay {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: var(--espresso);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--ivory);
-    font-size: 11px;
-    padding-left: 2px;
-    z-index: 1;
-    transition: transform .25s, background .25s;
-    border: 1px solid rgba(250, 247, 242, 0.3);
-}
-
-.mini-vid-box:hover .mini-vplay {
-    transform: scale(1.1);
-    background: var(--mocha);
+    pointer-events: none;
+    /* Fixed: prevents overlay from blocking native controls */
 }
 
 .mini-vid-info {
