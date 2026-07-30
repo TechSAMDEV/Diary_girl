@@ -423,7 +423,6 @@ nav.site-nav {
     inset: 0;
     background: rgba(42, 22, 12, 0.15);
     pointer-events: none;
-    /* Fixed: prevents overlay from blocking native controls */
 }
 
 .mini-vid-info {
@@ -718,8 +717,7 @@ nav.site-nav {
     margin-top: 6px;
 }
 
-.islab .btn-p,
-.islab .btn-s {
+.islab .btn-p {
     display: inline-block;
     width: 100%;
     max-width: 240px;
@@ -732,9 +730,6 @@ nav.site-nav {
     border-radius: 0;
     cursor: pointer;
     transition: all .2s ease;
-}
-
-.islab .btn-p {
     background: var(--espresso);
     color: var(--ivory);
     border: 1px solid var(--espresso);
@@ -988,110 +983,4 @@ footer p {
 
 .f-links a:hover {
     color: var(--gold-l);
-}
-
-/* ── MODAL ── */
-.modal-content.card-modal {
-    background: var(--ivory);
-    border: none;
-    border-radius: 10px;
-    box-shadow: inset 0 0 18px rgba(61, 35, 20, 0.08), 0 20px 50px rgba(42, 22, 12, 0.2);
-    padding: 10px;
-}
-
-.card-modal .modal-header {
-    border-bottom: none;
-    padding: 20px 24px 0;
-}
-
-.card-modal .modal-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 22px;
-    color: var(--text-1);
-}
-
-.card-modal .modal-body {
-    padding: 6px 24px 24px;
-}
-
-.m-sum {
-    font-size: 11.5px;
-    color: var(--text-4);
-    margin-bottom: 18px;
-    line-height: 1.5;
-}
-
-.m-price {
-    background: var(--cream);
-    padding: 12px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 18px;
-    border-radius: 6px;
-}
-
-.m-price span {
-    font-size: 11px;
-    color: var(--text-4);
-}
-
-.m-price strong {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 26px;
-    color: var(--text-1);
-}
-
-.m-field label {
-    font-size: 9.5px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--text-3);
-    margin-bottom: 5px;
-}
-
-.m-field .form-control {
-    border-radius: 4px;
-    border: 1px solid rgba(61, 35, 20, 0.18);
-    font-size: 13px;
-    color: var(--text-1);
-}
-
-.m-field .form-control:focus {
-    border-color: var(--mocha);
-    box-shadow: none;
-}
-
-.m-pay {
-    width: 100%;
-    background: var(--espresso);
-    color: var(--ivory);
-    font-weight: 600;
-    font-size: 10px;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    padding: 13px;
-    border: none;
-    cursor: pointer;
-    transition: background .2s;
-    margin-top: 4px;
-    border-radius: 4px;
-}
-
-.m-pay:hover {
-    background: var(--mocha);
-    color: var(--ivory);
-}
-
-.m-note {
-    text-align: center;
-    font-size: 10px;
-    color: var(--taupe);
-    margin-top: 10px;
-    line-height: 1.5;
 }
