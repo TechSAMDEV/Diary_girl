@@ -105,3 +105,6 @@ function toggleFaq(btn) {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!open) item.classList.add('open');
 }
+
+// Automatically update copyright year
+document.getElementById('current-year').textContent = new Date().getFullYear();

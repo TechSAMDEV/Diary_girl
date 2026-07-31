@@ -979,6 +979,7 @@ footer p {
     text-transform: uppercase;
     color: rgba(196, 181, 165, 0.35);
     transition: color .2s;
+    text-decoration: none;
 }
 
 .f-links a:hover {
