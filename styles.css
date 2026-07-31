@@ -340,29 +340,29 @@ nav.site-nav {
 .countdown-grid {
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .countdown-box {
     background: var(--espresso);
     color: var(--ivory);
-    padding: 18px 22px;
-    min-width: 84px;
+    padding: 16px 14px;
+    min-width: 72px;
 }
 
 .countdown-num {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
-    font-size: 34px;
+    font-size: 30px;
     line-height: 1;
     color: var(--ivory);
 }
 
 .countdown-unit {
-    font-size: 9.5px;
+    font-size: 9px;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--taupe);
     margin-top: 6px;

@@ -32,30 +32,46 @@ if (ci) {
     ci.innerHTML = full + full;
 }
 
-// COUNTDOWN — registration closes 12 August 2026, 11:59:59 PM
-const REG_CLOSE = new Date('2026-08-12T23:59:59');
+// COUNTDOWN — runs from 1 August 2026, 00:00:00 to 1 September 2026, 00:59:59
+const REG_START = new Date('2026-08-01T00:00:00');
+const REG_CLOSE = new Date('2026-09-01T00:59:59');
+
 function updateCountdown() {
     const now = new Date();
-    const diff = REG_CLOSE - now;
     const dEl = document.getElementById('cd-days');
     const hEl = document.getElementById('cd-hours');
     const mEl = document.getElementById('cd-mins');
+    const sEl = document.getElementById('cd-secs');
     const noteEl = document.getElementById('countdown-note');
     if (!dEl) return;
+
+    // Check if it hasn't started yet
+    if (now < REG_START) {
+        dEl.textContent = '0'; hEl.textContent = '0'; mEl.textContent = '0'; sEl.textContent = '0';
+        if (noteEl) noteEl.textContent = 'Registration opens 1 August 2026 and closes 1 September 2026, 00:59 AM';
+        return;
+    }
+
+    const diff = REG_CLOSE - now;
     if (diff <= 0) {
-        dEl.textContent = '0'; hEl.textContent = '0'; mEl.textContent = '0';
+        dEl.textContent = '0'; hEl.textContent = '0'; mEl.textContent = '0'; sEl.textContent = '0';
         if (noteEl) noteEl.textContent = 'Registration is now closed';
         return;
     }
+
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
     dEl.textContent = days;
     hEl.textContent = hours;
     mEl.textContent = mins;
+    sEl.textContent = secs;
 }
+
 updateCountdown();
-setInterval(updateCountdown, 60000);
+setInterval(updateCountdown, 1000);
 
 // CURRENCY
 const RATES = { NGN: 1, USD: 1540, EUR: 1680, GBP: 1940 };
