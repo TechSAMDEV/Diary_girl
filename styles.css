@@ -617,21 +617,21 @@ nav.site-nav {
 .islab .peter_pic {
     background: url('./media/peter_pic.jpeg') center no-repeat;
     background-size: cover;
-    width: 50%;
+    width: 40%;
     margin: auto;
 }
 
 .islab .adul_pic {
     background: url('./media/adul_pic.jpeg') center no-repeat;
     background-size: cover;
-    width: 50%;
+    width: 48%;
     margin: auto;
 }
 
 .islab .ola_pic {
     background: url('./media/ola_pic.jpeg') center no-repeat;
     background-size: cover;
-    width: 50%;
+    width: 48%;
     margin: auto;
 }
 
