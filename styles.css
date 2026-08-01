@@ -582,6 +582,49 @@ nav.site-nav {
     display: flex;
 }
 
+/* ── MULTI-CURRENCY BUTTON GROUP STYLES ── */
+.islab .btn-p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 20px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .2s ease;
+    color: var(--ivory);
+    text-decoration: none;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.islab .btn-p:hover {
+    opacity: 0.9;
+    color: var(--ivory);
+}
+
+/* Variant background colors */
+.btn-naira {
+    background: var(--espresso);
+    border: 1px solid var(--espresso);
+}
+
+.btn-dollar {
+    background: var(--mocha);
+    border: 1px solid var(--mocha);
+}
+
+.btn-pounds {
+    background: var(--espresso-2);
+    border: 1px solid var(--espresso-2);
+}
+
 .islab {
     max-width: 400px;
     margin: 0 auto 30px;
