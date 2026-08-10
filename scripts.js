@@ -108,3 +108,11 @@ function toggleFaq(btn) {
 
 // Automatically update copyright year
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
+
+function scrollToCard(targetId) {
+    const el = document.getElementById(targetId);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
