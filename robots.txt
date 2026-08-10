@@ -1,0 +1,12 @@
+# 1. Allow all search bots to crawl the public pages
+User-agent: *
+Allow: /
+
+# 2. Block search bots from low-value utility files
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /README.md
+
+# 3. Provide the roadmap link to speed up crawling
+Sitemap: https://vercel.app
