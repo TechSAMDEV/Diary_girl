@@ -113,6 +113,9 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
 function scrollToCard(targetId) {
     const el = document.getElementById(targetId);
     if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const yOffset = -50; // Negative moves it down; positive moves it up
+        const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+
+        el.scrollIntoView({ behavior: 'smooth', block: 'start', top: "y"});
     }
 }
