@@ -376,11 +376,12 @@ nav.site-nav {
 }
 
 /* ── REVIEWS ── */
+/* ── REVIEWS SLAB & CARDS ── */
 .reviews-slab {
     background: var(--ivory);
     border: 1px solid rgba(61, 35, 20, 0.12);
     border-radius: 12px;
-    box-shadow: 0 0 18px rgba(42, 22, 12, 1);
+    box-shadow: 0 4px 20px rgba(42, 22, 12, 0.15);
     padding: 24px 20px;
     max-width: 440px;
     margin: 0 auto;
@@ -392,7 +393,7 @@ nav.site-nav {
     border-radius: 10px;
     padding: 14px;
     margin-bottom: 16px;
-    transition: background .25s;
+    transition: background 0.25s ease;
 }
 
 .review-card-group:last-child {
@@ -503,6 +504,7 @@ nav.site-nav {
     height: 22px;
     background: var(--espresso);
     border: none;
+    border-radius: 50%;
     cursor: pointer;
     color: var(--ivory);
     font-size: 8px;
@@ -511,18 +513,21 @@ nav.site-nav {
     justify-content: center;
     padding-left: 1px;
     flex-shrink: 0;
-    transition: background .2s;
+    transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .mini-v-play:hover {
     background: var(--mocha);
+    transform: scale(1.05);
 }
 
 .mini-v-bar {
     flex: 1;
-    height: 2px;
-    background: rgba(42, 22, 12, 0.15);
+    height: 3px;
+    background: rgba(42, 22, 12, 0.12);
+    border-radius: 2px;
     position: relative;
+    overflow: hidden;
 }
 
 .mini-v-fill {
@@ -531,12 +536,107 @@ nav.site-nav {
     top: 0;
     bottom: 0;
     background: var(--mocha);
+    transition: width 0.1s linear;
 }
 
 .mini-v-dur {
     font-size: 9px;
     color: var(--text-4);
     white-space: nowrap;
+}
+
+
+/* ── REVIEWS CAROUSEL CONTAINER & CONTROLS ── */
+
+.reviews-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 540px; /* Aligned for optimal review slab framing */
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.reviews-carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.reviews-carousel-track {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.review-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 4px 5px;
+}
+
+/* Arrow Navigation */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--ivory);
+    border: 1px solid rgba(61, 35, 20, 0.15);
+    color: var(--espresso);
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(42, 22, 12, 0.1);
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.carousel-nav:hover {
+    background: var(--cream);
+    border-color: var(--mocha);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-nav.prev { left: 0; }
+.carousel-nav.next { right: 0; }
+
+/* Indicators / Dots */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(61, 35, 20, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--espresso);
+    transform: scale(1.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .reviews-carousel-wrapper {
+        padding: 0;
+    }
+    
+    .carousel-nav {
+        display: none; /* Mobile relies on swipe touch events */
+    }
 }
 
 /* ── INSTRUCTORS + PROGRAMS ── */

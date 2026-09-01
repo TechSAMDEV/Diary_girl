@@ -45,7 +45,7 @@
   <!-- HERO -->
   <section class="hero d-flex align-items-center justify-content-center text-center fade-in-section">
     <div class="hero-inner container">
-      <div class="hero-eyebrow">September 2026 Cohort · Now Enrolling</div>
+      <div class="hero-eyebrow">OCTOBER 2026 Cohort · Now Enrolling</div>
       <h1 class="hero-title">Become a<br><em>High-Value</em><br>Data Professional</h1>
       <div class="hero-rule"></div>
       <p class="hero-sub mx-auto">Be the High-Value Analyst. Leave with an industry-specific portfolio, master
@@ -128,91 +128,111 @@
             <div class="countdown-unit">Seconds</div>
           </div>
         </div>
-        <!-- <p class="countdown-note" id="countdown-note">Registration closes 1 September 2026, 00:59 AM</p> -->
+        <p class="countdown-note" id="countdown-note">Registration closes 30 September 2026, 00:59 PM</p>
       </div>
   </section>
 
-  <!-- REVIEWS -->
+  <!-- REVIEWS CAROUSEL SECTION -->
   <section class="sec reviews fade-in-section" id="reviews">
     <div class="container">
       <div class="sec-eye text-center">Student Success Stories</div>
       <div class="sec-title text-center">Hear It From <em>Them</em></div>
       <div class="sec-rule c"></div>
 
-      <div class="reviews-slab">
-        <!-- Review Group 1 -->
-        <div class="review-card-group">
-          <!-- Video Box with Embedded HTML5 Video -->
-          <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
-            <video id="vid-1" controls preload="metadata"
-              style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
-              onerror="console.log('Video 1 failed to load')">
-              <source src="./mps/vid_1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="mini-vid-info">
-            <div class="mini-vid-title">Gift.</div>
-            <div class="mini-vid-detail">Nigeria</div>
-          </div>
+      <!-- Carousel Container -->
+      <div class="reviews-carousel-wrapper">
 
-          <!-- Voice Note Box with Working Audio Player -->
-          <div class="mini-voice-box">
-            <div class="mini-v-av" style="background:linear-gradient(135deg,#5c3520,#9a6040)">C</div>
-            <div class="mini-v-content">
-              <div class="mini-v-head">
-                <span class="mini-v-name">Chisom</span>
-                <span class="mini-v-loc">Ireland</span>
-              </div>
-              <audio id="audio-amaka" preload="none" src="./mps/voice_note1.mp4"></audio>
-              <div class="mini-v-player">
-                <button class="mini-v-play"
-                  onclick="let a = document.getElementById('audio-amaka'); a.paused ? a.play() : a.pause();">▶</button>
-                <div class="mini-v-bar">
-                  <div class="mini-v-fill" style="width:40%"></div>
+        <!-- Navigation Buttons -->
+        <button class="carousel-nav prev" aria-label="Previous Slide" onclick="moveCarousel(-1)">❮</button>
+        <button class="carousel-nav next" aria-label="Next Slide" onclick="moveCarousel(1)">❯</button>
+
+        <!-- Carousel Viewport / Track -->
+        <div class="reviews-carousel-track-container" id="carouselTrackContainer">
+          <div class="reviews-carousel-track" id="carouselTrack">
+
+            <!-- Review Slide 1 -->
+            <div class="review-slide">
+              <div class="review-card-group">
+                <!-- Video Box -->
+                <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
+                  <video id="vid-1" controls preload="metadata"
+                    style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
+                    onerror="console.log('Video 1 failed to load')">
+                    <source src="./mps/vid_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
-                <span class="mini-v-dur">0:27</span>
+                <div class="mini-vid-info">
+                  <div class="mini-vid-title">Gift</div>
+                  <div class="mini-vid-detail">Nigeria</div>
+                </div>
+
+                <!-- Voice Note Box -->
+                <div class="mini-voice-box">
+                  <div class="mini-v-av" style="background:linear-gradient(135deg,#5c3520,#9a6040)">C</div>
+                  <div class="mini-v-content">
+                    <div class="mini-v-head">
+                      <span class="mini-v-name">Chisom</span>
+                      <span class="mini-v-loc">Ireland</span>
+                    </div>
+                    <audio id="audio-amaka" preload="none" src="./mps/voice_note1.mp4"></audio>
+                    <div class="mini-v-player">
+                      <button class="mini-v-play" onclick="toggleAudio('audio-amaka', this)">▶</button>
+                      <div class="mini-v-bar">
+                        <div class="mini-v-fill" id="fill-audio-amaka" style="width: 0%"></div>
+                      </div>
+                      <span class="mini-v-dur" id="dur-audio-amaka">0:27</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!-- Review Slide 2 -->
+            <div class="review-slide">
+              <div class="review-card-group">
+                <!-- Video Box -->
+                <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
+                  <video id="vid-2" controls preload="metadata"
+                    style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
+                    onerror="console.log('Video 2 failed to load')">
+                    <source src="./mps/vid_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="mini-vid-info">
+                  <div class="mini-vid-title">Olusayo</div>
+                  <div class="mini-vid-detail">Dubai, UAE</div>
+                </div>
+
+                <!-- Voice Note Box -->
+                <div class="mini-voice-box">
+                  <div class="mini-v-av" style="background:linear-gradient(135deg,#3d5c3a,#6a9460)">S</div>
+                  <div class="mini-v-content">
+                    <div class="mini-v-head">
+                      <span class="mini-v-name">Stephanie</span>
+                      <span class="mini-v-loc">United Kingdom</span>
+                    </div>
+                    <audio id="audio-blessing" preload="none" src="./mps/voice_note2.mp4"></audio>
+                    <div class="mini-v-player">
+                      <button class="mini-v-play" onclick="toggleAudio('audio-blessing', this)">▶</button>
+                      <div class="mini-v-bar">
+                        <div class="mini-v-fill" id="fill-audio-blessing" style="width: 0%"></div>
+                      </div>
+                      <span class="mini-v-dur" id="dur-audio-blessing">0:19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add additional .review-slide elements here seamlessly -->
+
           </div>
         </div>
 
-        <!-- Review Group 2 -->
-        <div class="review-card-group mb-0">
-          <!-- Video Box with Embedded HTML5 Video -->
-          <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
-            <video id="vid-2" controls preload="metadata"
-              style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
-              onerror="console.log('Video 2 failed to load')">
-              <source src="./mps/vid_2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="mini-vid-info">
-            <div class="mini-vid-title">Olusayo</div>
-            <div class="mini-vid-detail">Dubai, UAE</div>
-          </div>
-
-          <!-- Voice Note Box with Working Audio Player -->
-          <div class="mini-voice-box">
-            <div class="mini-v-av" style="background:linear-gradient(135deg,#3d5c3a,#6a9460)">S</div>
-            <div class="mini-v-content">
-              <div class="mini-v-head">
-                <span class="mini-v-name">Stephanie </span>
-                <span class="mini-v-loc">United Kingdom</span>
-              </div>
-              <audio id="audio-blessing" preload="none" src="./mps/voice_note2.mp4"></audio>
-              <div class="mini-v-player">
-                <button class="mini-v-play"
-                  onclick="let a = document.getElementById('audio-blessing'); a.paused ? a.play() : a.pause();">▶</button>
-                <div class="mini-v-bar">
-                  <div class="mini-v-fill" style="width:58%"></div>
-                </div>
-                <span class="mini-v-dur">0:19</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Carousel Indicators / Dots -->
+        <div class="carousel-indicators" id="carouselIndicators"></div>
       </div>
     </div>
   </section>
@@ -220,16 +240,9 @@
   <!-- INSTRUCTORS + PROGRAMS -->
   <section class="sec instructors fade-in-section" id="instructors">
     <div class="container">
-      <div class="sec-eye text-center">The Teaching Team &amp; Enrollment</div>
       <div class="sec-title text-center">Choose Your <em>Learning Experience</em></div>
-      <p class="inst-intro-sub mx-auto text-center">Choose the programme that best fits your goals, schedule and
-        learning style. Every instructor follows the same industry-focused curriculum, practical projects and
-        business-first approach.</p>
       <div class="d-flex gap-2 flex-wrap align-items-center justify-content-center mb-5">
         <span class="cur-l">Price in</span>
-        <button class="cur-btn active" onclick="setCur('NGN',this)">₦ Naira</button>
-        <button class="cur-btn" onclick="setCur('USD',this)">$ Dollar</button>
-        <button class="cur-btn" onclick="setCur('GBP',this)">£ Pounds</button>
       </div>
 
       <!-- TRACK SELECTOR WIZARD -->
@@ -239,30 +252,37 @@
 
           <!-- Option 1: New to data -->
           <a href="#abi" class="track-sel-card" onclick="scrollToCard('abi')">
-            <div class="ts-c-head">New to data, tight budget?</div>
-            <div class="ts-c-sub">Excel + Power BI · 8 weeks</div>
-            <div class="ts-c-price">₦152,000</div>
+            <div class="ts-c-head">Beginner, Want full Structure?</div>
+            <div class="ts-c-sub">Excel + Power BI + SQL + Prompt Engineering + AI Automation <b>(GROUP1)</b></div>
+    
           </a>
 
           <!-- Option 2: Full skill set -->
           <a href="#mary-a" class="track-sel-card" onclick="scrollToCard('mary-a')">
-            <div class="ts-c-head">Want the full skill set?</div>
-            <div class="ts-c-sub">Excel + Power BI + SQL · 11 weeks</div>
-            <div class="ts-c-price">₦215,000</div>
+            <div class="ts-c-head">Beginner, Want full Structure?</div>
+            <div class="ts-c-sub">Excel + Power BI + SQL + Prompt Engineering + AI Automation <b>(GROUP2)</b></div>
+            
           </a>
 
           <!-- Option 3: Private coaching -->
           <a href="#peter" class="track-sel-card" onclick="scrollToCard('peter')">
-            <div class="ts-c-head">Prefer 1-on-1 pacing?</div>
-            <div class="ts-c-sub">Private Coaching · 11 weeks</div>
-            <div class="ts-c-price">₦320,000</div>
+            <div class="ts-c-head">Beginner, Want full Structure?</div>
+            <div class="ts-c-sub">Excel + Power BI + SQL + Prompt Engineering + AI Automation <b>(PRIVATE1)</b></div>
+            
+          </a>
+
+            <!-- Option 3: Private coaching 2 -->
+          <a href="#peter" class="track-sel-card" onclick="scrollToCard('peter')">
+            <div class="ts-c-head">Beginner, Want full Structure?</div>
+            <div class="ts-c-sub">Excel + Power BI + SQL + Prompt Engineering + AI Automation <b>(PRIVATE2)</b></div>
+            
           </a>
 
           <!-- Option 4: Python -->
           <a href="#python" class="track-sel-card" onclick="scrollToCard('python')">
-            <div class="ts-c-head">Already know Excel/PBI/SQL?</div>
-            <div class="ts-c-sub">Python for Data Analysis · 8 weeks</div>
-            <div class="ts-c-price">₦283,000</div>
+            <div class="ts-c-head">Beginner, Want full Structure?</div>
+            <div class="ts-c-sub">Already know Excel + Power BI + SQL? <b>Python + AI Automation + Prompt Engineering</b></div>
+            
           </a>
 
         </div>

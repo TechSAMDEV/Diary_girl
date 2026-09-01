@@ -119,3 +119,137 @@ function scrollToCard(targetId) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start', top: "y"});
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('carouselTrack');
+  const slides = Array.from(track.children);
+  const indicatorsContainer = document.getElementById('carouselIndicators');
+  let currentIndex = 0;
+
+  // Touch / Drag variables
+  let startX = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let isDragging = false;
+
+  // Render Carousel Dots dynamically
+  slides.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('carousel-dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(index));
+    indicatorsContainer.appendChild(dot);
+  });
+
+  const dots = Array.from(indicatorsContainer.children);
+
+  function updateCarousel() {
+    // Translate the track position
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    // Update active dot
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentIndex);
+    });
+
+    // Pause all playing media when changing slides
+    document.querySelectorAll('video, audio').forEach(media => media.pause());
+    document.querySelectorAll('.mini-v-play').forEach(btn => btn.innerText = '▶');
+  }
+
+  window.moveCarousel = function(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+      currentIndex = slides.length - 1;
+    } else if (currentIndex >= slides.length) {
+      currentIndex = 0;
+    }
+    updateCarousel();
+  };
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  // --- Touch & Swipe Gesture Logic ---
+  const container = document.getElementById('carouselTrackContainer');
+
+  container.addEventListener('touchstart', touchStart);
+  container.addEventListener('touchend', touchEnd);
+  container.addEventListener('touchmove', touchMove);
+
+  function touchStart(e) {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }
+
+  function touchMove(e) {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diffX = currentX - startX;
+    
+    // Slight drag feedback resistance
+    if (Math.abs(diffX) > 10) {
+      track.style.transform = `translateX(calc(-${currentIndex * 100}% + ${diffX}px))`;
+    }
+  }
+
+  function touchEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    const endX = e.changedTouches[0].clientX;
+    const diffX = endX - startX;
+
+    if (diffX < -50) {
+      moveCarousel(1); // Swipe left -> Next slide
+    } else if (diffX > 50) {
+      moveCarousel(-1); // Swipe right -> Prev slide
+    } else {
+      updateCarousel(); // Reset position if swipe threshold was not met
+    }
+  }
+});
+
+// --- Audio Player Toggle & Real-time Progress Fill ---
+function toggleAudio(audioId, btn) {
+  const audio = document.getElementById(audioId);
+  const fill = document.getElementById(`fill-${audioId}`);
+  const durLabel = document.getElementById(`dur-${audioId}`);
+
+  if (audio.paused) {
+    // Pause any other active audio
+    document.querySelectorAll('audio').forEach(a => {
+      if (a !== audio) {
+        a.pause();
+        const otherBtn = a.parentElement.querySelector('.mini-v-play');
+        if (otherBtn) otherBtn.innerText = '▶';
+      }
+    });
+
+    audio.play();
+    btn.innerText = '❚❚';
+  } else {
+    audio.pause();
+    btn.innerText = '▶';
+  }
+
+  // Sync progress bar fill dynamically
+  audio.ontimeupdate = () => {
+    if (audio.duration) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      if (fill) fill.style.width = `${pct}%`;
+      
+      // Update time display countdown
+      const remainingSecs = Math.floor(audio.duration - audio.currentTime);
+      const mins = Math.floor(remainingSecs / 60);
+      const secs = Math.floor(remainingSecs % 60).toString().padStart(2, '0');
+      if (durLabel) durLabel.innerText = `${mins}:${secs}`;
+    }
+  };
+
+  audio.onended = () => {
+    btn.innerText = '▶';
+    if (fill) fill.style.width = '0%';
+  };
+}
