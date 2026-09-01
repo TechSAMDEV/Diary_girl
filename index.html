@@ -132,6 +132,23 @@
       </div>
   </section>
 
+  <!--
+    ==========================================================================
+   ONBOARDING & CLARITY SESSION
+    ==========================================================================
+  -->
+  <section class="onboarding-banner-section">
+    <div class="onboarding-content">
+      <span class="onboarding-tag">ONBOARDING & CLARITY SESSION</span>
+      <h2 class="onboarding-title">Live Kick-Off: 1 October 2026 at 7:30 PM (Nigerian Time)</h2>
+      <p class="onboarding-desc">
+        All enrolled students across every track join us live on
+        <strong>1 October 2026 at 7:30 PM (Nigerian Time)</strong> for the OCTOBER 2026 COHORT kick-off. This session
+        sets you up for the weeks ahead.
+      </p>
+    </div>
+  </section>
+
   <!-- REVIEWS CAROUSEL SECTION -->
   <section class="sec reviews fade-in-section" id="reviews">
     <div class="container">
@@ -156,6 +173,7 @@
                 <!-- Video Box -->
                 <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
                   <video id="vid-1" controls preload="metadata"
+                    poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%237d523a'/><stop offset='100%' stop-color='%232a160c'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/></svg>"
                     style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
                     onerror="console.log('Video 1 failed to load')">
                     <source src="./mps/vid_1.mp4" type="video/mp4">
@@ -193,9 +211,10 @@
               <div class="review-card-group">
                 <!-- Video Box -->
                 <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
-                  <video id="vid-2" controls preload="metadata"
+                  <video id="vid-1" controls preload="metadata"
+                    poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%237d523a'/><stop offset='100%' stop-color='%232a160c'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/></svg>"
                     style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
-                    onerror="console.log('Video 2 failed to load')">
+                    onerror="console.log('Video 1 failed to load')">
                     <source src="./mps/vid_2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
@@ -250,233 +269,182 @@
         <div class="track-selector-title">Not Sure Which Track Fits You?</div>
         <div class="track-selector-track">
 
-          <!-- Option 1: New to data -->
-          <a href="#abi" class="track-sel-card" onclick="scrollToCard('abi')">
+          <!-- Option 1: Group Batch 1 -->
+          <a href="#group-1" class="track-sel-card" onclick="showSlab('group-1', event)">
             <div class="ts-c-head">Beginner, Want full Structure?</div>
-            <div class="ts-c-sub">Excel + Power BI + SQL + Prompt Engineering + AI Automation <b>(GROUP1)</b></div>
-    
+            <div class="ts-c-sub">Excel + Power BI + SQL + AI Automation + Prompt Engineering <b>(GROUP 1)</b></div>
           </a>
 
-          <!-- Option 2: Full skill set -->
-          <a href="#mary-a" class="track-sel-card" onclick="scrollToCard('mary-a')">
+          <!-- Option 2: Group Batch 2 -->
+          <a href="#group-2" class="track-sel-card" onclick="showSlab('group-2', event)">
             <div class="ts-c-head">Beginner, Want full Structure?</div>
-            <div class="ts-c-sub">Excel + Power BI + SQL + Prompt Engineering + AI Automation <b>(GROUP2)</b></div>
-            
+            <div class="ts-c-sub">Excel + Power BI + SQL + AI Automation + Prompt Engineering <b>(GROUP 2)</b></div>
           </a>
 
-          <!-- Option 3: Private coaching -->
-          <a href="#peter" class="track-sel-card" onclick="scrollToCard('peter')">
-            <div class="ts-c-head">Beginner, Want full Structure?</div>
-            <div class="ts-c-sub">Excel + Power BI + SQL + Prompt Engineering + AI Automation <b>(PRIVATE1)</b></div>
-            
+          <!-- Option 3: Abigail Private Coaching -->
+          <a href="#abi" class="track-sel-card" onclick="showSlab('abi', event)">
+            <div class="ts-c-head">Need 1-on-1 Guidance & Flexibility?</div>
+            <div class="ts-c-sub">Excel + Power BI + SQL + AI Automation + Prompt Engineering <b>(ABIGAIL PRIVATE)</b>
+            </div>
           </a>
 
-            <!-- Option 3: Private coaching 2 -->
-          <a href="#peter" class="track-sel-card" onclick="scrollToCard('peter')">
-            <div class="ts-c-head">Beginner, Want full Structure?</div>
-            <div class="ts-c-sub">Excel + Power BI + SQL + Prompt Engineering + AI Automation <b>(PRIVATE2)</b></div>
-            
+
+          <!-- Option 4: Peter Private Coaching -->
+          <a href="#private-2" class="track-sel-card" onclick="showSlab('private-2', event)">
+            <div class="ts-c-head">Private Mentorship with Associate Lead?</div>
+            <div class="ts-c-sub">Excel + Power BI + SQL + AI Automation + Prompt Engineering <b>(PETER PRIVATE)</b>
+            </div>
           </a>
 
-          <!-- Option 4: Python -->
-          <a href="#python" class="track-sel-card" onclick="scrollToCard('python')">
-            <div class="ts-c-head">Beginner, Want full Structure?</div>
-            <div class="ts-c-sub">Already know Excel + Power BI + SQL? <b>Python + AI Automation + Prompt Engineering</b></div>
-            
+          <!-- Option 5: Python Group -->
+          <a href="#private-1" class="track-sel-card" onclick="showSlab('private-1', event)">
+            <div class="ts-c-head">Already Know Excel + Power BI + SQL?</div>
+            <div class="ts-c-sub">Python for Data Analysis + AI Automation + Prompt Engineering <b>(PYTHON GROUP)</b>
+            </div>
           </a>
-
         </div>
-        <div class="track-sel-footer">
-          Still unsure? <a href="https://wa.me/2348128133345?text=DM%20TRACK" target="_blank">DM "TRACK" &rarr;</a> and
-          I'll help you pick
+      </div>
+
+      <!-- SLAB TABS CONTROL -->
+      <!-- <div class="slab-nav-buttons">
+      <a href="#group-1" class="slab-nav-btn active" onclick="showSlab('group-1', event)">Group Batch 1</a>
+      <a href="#group-2" class="slab-nav-btn" onclick="showSlab('group-2', event)">Group Batch 2</a>
+      <a href="#abi" class="slab-nav-btn" onclick="showSlab('abi', event)">Abigail Private</a>
+      <a href="#private-1" class="slab-nav-btn" onclick="showSlab('private-1', event)">Python Group</a>
+      <a href="#private-2" class="slab-nav-btn" onclick="showSlab('private-2', event)">Peter Private</a>
+    </div> -->
+
+      <!-- GROUP 1 -->
+      <div class="islab" id="group-1">
+        <div class="spot-badge">10 SPOTS ONLY</div>
+        <h3>GROUP PROGRAMME · BATCH 1 (AFTERNOON)</h3>
+        <p><strong>Excel + Power BI + SQL + Prompt Engineering & AI Automation — Group Class</strong></p>
+        <p class="slab-schedule">Monday & Wednesday · 2:00 PM – 4:00 PM (Nigerian Time)</p>
+        <p class="slab-meta">
+          11 Weeks · Live sessions, all recorded<br>
+          Start: <strong>5 October 2026</strong> · End: <strong>16 December 2026</strong>
+        </p>
+
+        <div class="price-box">
+          <div class="slab-price" data-ngn="₦215,000" data-usd="$195" data-gbp="£145">₦215,000</div>
+          <div class="pay-buttons-group">
+            <a href="https://flutterwave.com/pay/o7jhuqzuk3i4" class="pay-btn-link" target="_blank">GET STARTED</a>
+          </div>
+          <p class="post-pay-note">
+            *After payment, you're automatically added to the private programme group, where you'll receive
+            onboarding, class updates, and all programme details.*
+          </p>
+        </div>
+      </div>
+
+      <!-- GROUP 2 -->
+      <div class="islab" id="group-2">
+        <div class="spot-badge">10 SPOTS ONLY</div>
+        <h3>GROUP PROGRAMME · BATCH 2 (EVENING)</h3>
+        <p><strong>Excel + Power BI + SQL + Prompt Engineering & AI Automation — Group Class</strong></p>
+        <p class="slab-schedule">Friday & Saturday · 8:00 PM – 10:00 PM (Nigerian Time)</p>
+        <p class="slab-meta">
+          11 Weeks · Live sessions, all recorded<br>
+          Start: <strong>2 October 2026</strong> · End: <strong>12 December 2026</strong>
+        </p>
+
+        <div class="price-box">
+          <div class="slab-price" data-ngn="₦215,000" data-usd="$195" data-gbp="£145">₦215,000</div>
+          <div class="pay-buttons-group">
+            <a href="https://flutterwave.com/pay/jyjw5cszodbu" class="pay-btn-link" target="_blank">GET STARTED</a>
+          </div>
+          <p class="post-pay-note">
+            *After payment, you're automatically added to the private programme group, where you'll receive
+            onboarding, class updates, and all programme details.*
+          </p>
         </div>
       </div>
 
       <!-- ABIGAIL -->
-      <div class="islab">
-        <div class="abi_pic"
-          style="height: 180px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-4); font-size: 10px; letter-spacing: 1px; margin-bottom: 16px;">
-        </div>
-        <div class="islab-eyebrow">Lead Instructor</div>
-        <div class="islab-title">Abigail Kayiani Yashiyi</div>
-        <div class="islab-role">
-          Abigail has trained 150+ aspiring data professionals, helping
-          students build career-ready skills, strong portfolios, and
-          confidence for global oppurtunities. She is passionate about
-          preparing analyst for both well-known and overlooked
-          opptunities in data through practical, result-driven training
-        </div>
-        <div class="islab-rule"></div>
-        <div class="islab-row">Excel &amp; Power BI — Group Class</div>
-        <div class="islab-row fw-bold">6 SPOTS ONLY</div>
-        <div class="islab-row">Saturday &amp; Sunday · 2:00 PM</div>
-        <div class="islab-row">8 weeks · 2-hour live sessions on Google Meet · All sessions recorded</div>
-        <div class="islab-row">
-          Bi weekly check in session every friday at 5:30 pm for all students across every track
-        </div>
-        <div class="islab-fee-row" id="abi">
-          <div class="islab-fee pc-price" data-ngn="152000" data-disc="152000" data-n="0"><span
-              class="pv">₦152,000</span></div>
-        </div>
-        <div class="d-flex flex-column align-items-center w-100 mt-3">
-          <a href="https://flutterwave.com/pay/mf69qnv85swt" target="_blank" class="btn-p btn-naira">Pay in Naira
-            (₦)</a>
-          <a href="https://flutterwave.com/pay/g2uedotof46w" target="_blank" class="btn-p btn-dollar">Pay in Dollars
-            ($)</a>
-          <a href="https://flutterwave.com/pay/tlzgojwu21tw" target="_blank" class="btn-p btn-pounds">Pay in Pounds
-            (£)</a>
-        </div>
-      </div>
+      <div class="islab" id="abi">
+        <div class="spot-badge">5 SPOTS ONLY</div>
+        <h3>ABIGAIL'S PRIVATE SESSIONS</h3>
 
-      <!-- MARY -->
-      <div class="islab mary-slab" id="mary-a">
-        <div class="mary_pic"
-          style="height: 180px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-4); font-size: 10px; letter-spacing: 1px; margin-bottom: 16px;">
-        </div>
-        <div class="islab-eyebrow">Group Classes</div>
-        <div class="islab-title">Mary Bajisma Ashiru</div>
-        <div class="islab-role">
-          Mary Bajisma Ashiru is Data Analystics Trainer and creator
-          of Microsoft Excel course on Udemy. She helps aspiring data
-          analyst build practical, job-ready skills through hands-on
-          projects, real-work case studies, and mentorship.
-        </div>
-        <div class="islab-rule"></div>
-
-        <div class="islab-row fw-bold">
-          <strong>Group A</strong>
-          — MONDAY &amp; WEDNESDAY: 2pm - 4pm · <br> <span class="fw-bold">10
-            SPOTS</span> · EXCEL · POWER BI · SQL (11 weeks)
-        </div>
-        <div class="islab-fee-row">
-          <div class="islab-fee pc-price" data-ngn="215000" data-disc="200000" data-n="5"><span
-              class="pv">₦215,000</span></div>
-        </div>
-        <div class="d-flex flex-column align-items-center w-100 mt-3">
-          <a href="https://flutterwave.com/pay/nwgpc8leefpo" target="_blank" class="btn-p btn-naira">Pay in Naira
-            (₦)</a>
-          <a href="https://flutterwave.com/pay/erj2e3xwa4b8" target="_blank" class="btn-p btn-dollar">Pay in Dollars
-            ($)</a>
-          <a href="https://flutterwave.com/pay/tlzgojwu21tw" target="_blank" class="btn-p btn-pounds">Pay in Pounds
-            (£)</a>
+        <div class="instructor-bio">
+          <div class="instructor-title">LEAD INSTRUCTOR</div>
+          <div class="instructor-name">ABIGAIL KAYIANI YASHIYI</div>
+          <p class="instructor-desc">
+            Abigail has trained aspiring data professionals, helping students build career-ready skills, strong
+            portfolios, and confidence for global opportunities. She is passionate about preparing analysts for both
+            well-known and overlooked opportunities in data through practical, result-driven training.
+          </p>
         </div>
 
-        <div class="islab-row fw-bold"><strong>Group B</strong>
-          — FRIDAY &amp; SATURDAY: 8pm - 10pm
-          · <span class="fw-bold">10 SPOTS</span> · EXCEL · POWER BI · SQL (11 weeks) </div>
-        <div class="islab-fee-row">
-          <div class="islab-fee pc-price" data-ngn="215000" data-disc="200000" data-n="5"><span
-              class="pv">₦215,000</span></div>
-        </div>
-        <div class="d-flex flex-column align-items-center w-100 mt-3">
-          <a href="https://flutterwave.com/pay/j5ixhoxawkb1" target="_blank" class="btn-p btn-naira">Pay in Naira
-            (₦)</a>
-          <a href="https://flutterwave.com/pay/cilvfsrvvssp" target="_blank" class="btn-p btn-dollar">Pay in Dollars
-            ($)</a>
-          <a href="https://flutterwave.com/pay/pmnmh0mommtl" target="_blank" class="btn-p btn-pounds">Pay in Pounds
-            (£)</a>
-        </div>
+        <p><strong>Excel + Power BI + SQL + Prompt Engineering & AI Automation — Private Coaching</strong></p>
+        <p class="slab-schedule">Wednesday, Thursday, Saturday · Twice-weekly (1.5 hrs) or Once-weekly (2.5 hrs)</p>
+        <p class="slab-meta">
+          11 Weeks · Start: <strong>Week of 5 October 2026</strong> · End: <strong>Week of 21 December 2026</strong>
+        </p>
 
-        <div class="islab-row fw-bold" id="python"><strong>Python Group</strong> — TUESDAY &amp; THURSDAY: 7pm -
-          9pm · 8
-          WEEKS · PYTHON FOR DATA ANALYSIS</div>
-        <div class="islab-fee-row">
-          <div class="islab-fee pc-price" data-ngn="283000" data-disc="283000" data-n="0"><span
-              class="pv">₦283,000</span></div>
-        </div>
-        <div class="d-flex flex-column align-items-center w-100 mt-3">
-          <a href="https://flutterwave.com/pay/hfzqelobfdgq" target="_blank" class="btn-p btn-naira">Pay in Naira
-            (₦)</a>
-          <a href="https://flutterwave.com/pay/i4kc917bril9" target="_blank" class="btn-p btn-dollar">Pay in Dollars
-            ($)</a>
-          <a href="https://flutterwave.com/pay/i4kc917bril9" target="_blank" class="btn-p btn-pounds">Pay in Pounds
-            (£)</a>
-        </div>
-      </div>
-
-      <!-- PETER -->
-      <div class="islab peter-slab" id="peter">
-        <div class="peter_pic"
-          style="height: 180px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-4); font-size: 10px; letter-spacing: 1px; margin-bottom: 16px;">
-        </div>
-        <div class="islab-eyebrow">Private Coaching Instructor</div>
-        <div class="islab-title">Peter Ayim</div>
-        <div class="islab-role">
-          Peter Ayim is Data Analyst instructor with 3+ years of
-          experience in Excel, SQL, and Power BI. With a strong
-          Mathematics background, he helps students build analytical
-          thinking and job-ready data skills.
-        </div>
-        <div class="islab-rule"></div>
-        <div class="islab-row">Private Coaching: Excel + Power BI + SQL</div>
-        <div class="islab-row fw-bold"><span class="fw-bold">10 SPOTS ONLY</span> ·
-          11 WEEKS</div>
-        <div class="islab-row">
-          After payment you'll be redirected to Calendly to
-          book your first session.
-        </div>
-        <div class="islab-fee-row">
-          <div class="islab-fee pc-price" data-ngn="320000" data-disc="310000" data-n="3"><span
-              class="pv">₦320,000</span></div>
-        </div>
-        <div class="d-flex flex-column align-items-center w-100 mt-3">
-          <a href="https://flutterwave.com/pay/gcfcmjy0eoqm" target="_blank" class="btn-p btn-naira">Pay in Naira
-            (₦)</a>
-          <a href="https://flutterwave.com/pay/vafuwdo6teff" target="_blank" class="btn-p btn-pounds">Pay in Dollars
-            ($)</a>
-          <a href="https://flutterwave.com/pay/xelgphpwidxx" target="_blank" class="btn-p btn-dollar">Pay in Pounds
-            (£)</a>
-
-        </div>
-      </div>
-
-      <!-- MALIK & OLAYINKA -->
-      <div class="islab">
-        <div class="both">
-          <div class="adul_pic"
-            style="height: 180px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-4); font-size: 10px; letter-spacing: 1px; margin-bottom: 16px;">
+        <div class="price-box">
+          <div class="slab-price" data-ngn="₦350,000" data-usd="$265" data-gbp="£195">₦350,000</div>
+          <div class="pay-buttons-group">
+            <a href="https://flutterwave.com/pay/hhpb4aifffke" class="pay-btn-link" target="_blank">GET STARTED</a>
           </div>
-          <div class="ola_pic"
-            style="height: 180px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-4); font-size: 10px; letter-spacing: 1px; margin-bottom: 16px;">
-          </div>
-        </div>
-        <div class="islab-eyebrow">AI Automation Specialists</div>
-        <div class="islab-title">Abdulmalik Abdulsamad &amp; Olayinka Hamzah</div>
-        <div class="islab-role">
-          Helping students automate data workflows with Power Automate,
-          Make, and n8n, and build practical no-code solution using
-          Airtable, Glide, and Bubble. Learn the AI tools and automation
-          skills modern data professionals use to work smarter and
-          faster.
-        </div>
-        <div class="islab-rule"></div>
-        <div class="islab-row">Duration: 4-day intensive specialist programme after the <br> 11 weeks programme.</div>
-        <div class="islab-fee-row">
-          <div class="islab-fee">Included</div>
-          <div class="islab-fee-note">Included for every student.</div>
+          <p class="post-pay-note">
+            *After payment, you'll be directed to your private calendar to book your weekly session time, based on
+            your chosen days and format.*
+          </p>
         </div>
       </div>
 
-      <!-- DORIS -->
-      <div class="islab">
-        <div class="doris_pic"
-          style="height: 180px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-4); font-size: 10px; letter-spacing: 1px; margin-bottom: 16px;">
-        </div>
-        <div class="islab-eyebrow">AI Prompt Engineering Specialist</div>
-        <div class="islab-title">Doris Solomon Eyo</div>
-        <div class="islab-role">
-          Doris Solomon Eyo is an AI Prompt Engineering Tutor and AI
-          Educator who teaches people how to think before they prompt.
-          she helps learn build the mindset and prompting skills needed
-          to use AI tools effectively, confidently, and responsibly.
-        </div>
-        <div class="islab-rule"></div>
-        <div class="islab-row">Duration: 2-day intensive specialist programme after the <br> 11 weeks programme.</div>
-        <div class="islab-fee-row">
-          <div class="islab-fee">Included</div>
-          <div class="islab-fee-note">Included for every student</div>
+      <!-- PRIVATE 1 (PYTHON) -->
+      <div class="islab" id="private-1">
+        <div class="spot-badge">4 SPOTS ONLY</div>
+        <h3>PYTHON GROUP PROGRAMME</h3>
+        <p><strong>Python for Data Analysis — Group Class</strong></p>
+        <p class="slab-schedule">Tuesday and Thursday 7pm to 9pm · 2 sessions per week, 2 hours per session</p>
+        <p class="slab-meta">8 Weeks · Start: <strong>5 October 2026</strong></p>
+
+        <div class="price-box">
+          <div class="slab-price" data-ngn="₦257,000" data-usd="$195" data-gbp="£145">₦257,000</div>
+          <div class="pay-buttons-group">
+            <a href="https://flutterwave.com/pay/5yscty42kham" class="pay-btn-link" target="_blank">GET STARTED</a>
+          </div>
+          <p class="post-pay-note">
+            *After payment, you're automatically added to the Python programme group, where you'll receive class
+            information, onboarding, and updates.*
+          </p>
         </div>
       </div>
+
+      <!-- PRIVATE 2 (PETER) -->
+      <div class="islab" id="private-2">
+        <div class="spot-badge">7 SPOTS ONLY</div>
+        <h3>PRIVATE COACHING: ASSOCIATE INSTRUCTOR</h3>
+        <div class="instructor-bio">
+          <div class="instructor-title">LEAD INSTRUCTOR</div>
+          <div class="instructor-name">Peter Ayim</div>
+          <p class="instructor-desc">
+            Peter Ayim is a Data Analysis Instructor with 3+ years of experience in Excel, SQL and Power BI. With a
+            strong Mathematics background, he helps students build analytical thinking and job-ready data skills.
+          </p>
+        </div>
+        <p><strong>Excel + Power BI + SQL + Prompt Engineering & AI Automation For Data Analysis</strong></p>
+        <p class="slab-schedule">
+          Tuesday, Wednesday, Friday, Saturday, Sunday · Twice-weekly (1.5 hrs) or Once-weekly (2.5 hrs) — your choice
+        </p>
+        <p class="slab-meta">
+          11 Weeks · Start: <strong>Week of 5 October 2026</strong> · End: <strong>Week of 21 December 2026</strong>
+        </p>
+
+        <div class="price-box">
+          <div class="slab-price" data-ngn="₦302,000" data-usd="$302" data-gbp="£170">₦302,000</div>
+          <div class="pay-buttons-group">
+            <a href="https://flutterwave.com/pay/earolayj9xvs" class="pay-btn-link" target="_blank">GET STARTED</a>
+          </div>
+          <p class="post-pay-note">
+            *After payment, you'll be directed to your private calendar to book your weekly session time, based on
+            your chosen days and format.*
+          </p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -683,7 +651,7 @@
         <h3>Refund Policy</h3>
         <p>
           We are fully committed to delivering an excellent experience for you, If for any reason you need to cancel
-          before the first session on 2nd September, we will issue a refund with 20% deducted to cover administrative
+          before the first session on 1st October, we will issue a refund with 20% deducted to cover administrative
           and
           preparation costs already incurred. Once the first session has taken place, we are unable to offer refunds as
           the programme is already underway and resources have been fully committed. If you have any concerns at any

@@ -375,6 +375,52 @@ nav.site-nav {
     margin-bottom: 0;
 }
 
+/* ==========================================================================
+   7. ONBOARDING & CLARITY BANNER
+   ========================================================================== */
+.onboarding-banner-section {
+    background-color: var(--mocha);
+    color: var(--greige);
+    padding: 3.5rem 1.5rem;
+    border-top: 4px solid var(--gold);
+    border-bottom: 4px solid var(--gold);
+    text-align: center;
+    margin: 2rem;
+}
+
+.onboarding-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.onboarding-tag {
+    color: var(--gold);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.onboarding-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0.5rem 0 1rem 0;
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.onboarding-desc {
+    color: var(--brown-pale);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+
 /* ── REVIEWS ── */
 /* ── REVIEWS SLAB & CARDS ── */
 .reviews-slab {
@@ -551,7 +597,8 @@ nav.site-nav {
 .reviews-carousel-wrapper {
     position: relative;
     width: 100%;
-    max-width: 540px; /* Aligned for optimal review slab framing */
+    max-width: 540px;
+    /* Aligned for optimal review slab framing */
     margin: 0 auto;
     padding: 0 50px;
 }
@@ -602,8 +649,13 @@ nav.site-nav {
     transform: translateY(-50%) scale(1.08);
 }
 
-.carousel-nav.prev { left: 0; }
-.carousel-nav.next { right: 0; }
+.carousel-nav.prev {
+    left: 0;
+}
+
+.carousel-nav.next {
+    right: 0;
+}
 
 /* Indicators / Dots */
 .carousel-indicators {
@@ -633,9 +685,10 @@ nav.site-nav {
     .reviews-carousel-wrapper {
         padding: 0;
     }
-    
+
     .carousel-nav {
-        display: none; /* Mobile relies on swipe touch events */
+        display: none;
+        /* Mobile relies on swipe touch events */
     }
 }
 
@@ -680,6 +733,241 @@ nav.site-nav {
 
 .both {
     display: flex;
+}
+
+
+/* course  */
+
+/* ── PALETTE VARIABLES (Match to your existing site setup) ── */
+:root {
+    --ivory: #ffffff;
+    --cream: #f9f8f4;
+    --greige: #ece9e2;
+    --taupe: #c8bebd;
+    --mocha: #7d523a;
+    --espresso: #2a160c;
+    --text-1: #2a160c;
+    --text-4: #8a7a72;
+}
+
+/* ── TRACK SELECTOR WIZARD ── */
+.track-selector-wrap {
+    background: var(--ivory);
+    border: 1px solid rgba(61, 35, 20, 0.12);
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 4px 15px rgba(42, 22, 12, 0.05);
+}
+
+.track-selector-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 18px;
+    color: var(--espresso);
+}
+
+.track-selector-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.track-sel-card {
+    display: block;
+    background: var(--cream);
+    border: 1px solid rgba(61, 35, 20, 0.1);
+    border-radius: 8px;
+    padding: 14px;
+    text-decoration: none;
+    color: var(--text-1);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.track-sel-card:hover {
+    background: var(--greige);
+    border-color: var(--mocha);
+    transform: translateY(-2px);
+}
+
+.ts-c-head {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--mocha);
+    margin-bottom: 4px;
+}
+
+.ts-c-sub {
+    font-size: 12px;
+    color: var(--text-1);
+    line-height: 1.4;
+}
+
+.track-sel-footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-4);
+    margin-top: 16px;
+}
+
+.track-sel-footer a {
+    color: var(--mocha);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.track-sel-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ── SLAB TAB SWITCHER CONTROLS ── */
+.slab-nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.slab-nav-btn {
+    background: var(--ivory);
+    border: 1px solid rgba(61, 35, 20, 0.15);
+    color: var(--text-1);
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.slab-nav-btn:hover {
+    background: var(--greige);
+}
+
+.slab-nav-btn.active {
+    background: var(--espresso);
+    color: var(--ivory);
+    border-color: var(--espresso);
+}
+
+/* ── ISLAB CONTAINERS (PRICING CARDS) ── */
+.islab {
+    display: none;
+    /* Hidden by default */
+    background: var(--ivory);
+    border: 1px solid rgba(61, 35, 20, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(42, 22, 12, 0.08);
+    padding: 28px 24px;
+    max-width: 540px;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.islab.active-slab {
+    display: block;
+    opacity: 1;
+}
+
+.spot-badge {
+    display: inline-block;
+    background: var(--espresso);
+    color: var(--ivory);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.islab h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+}
+
+.slab-schedule {
+    color: var(--mocha);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.slab-meta {
+    font-size: 13px;
+    color: var(--text-4);
+    line-height: 1.5;
+}
+
+.instructor-bio {
+    background: var(--cream);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+    border: 1px solid rgba(61, 35, 20, 0.08);
+}
+
+.instructor-title {
+    font-size: 10px;
+    color: var(--mocha);
+    font-weight: 600;
+}
+
+.instructor-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.instructor-desc {
+    font-size: 12px;
+    color: var(--text-4);
+    margin-top: 4px;
+}
+
+.price-box {
+    margin-top: 20px;
+    border-top: 1px solid var(--greige);
+    padding-top: 16px;
+}
+
+.slab-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 12px;
+}
+
+.pay-btn-link {
+    display: block;
+    text-align: center;
+    background: var(--espresso);
+    color: var(--ivory);
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+.pay-btn-link:hover {
+    background: var(--mocha);
+}
+
+.post-pay-note {
+    font-size: 11px;
+    color: var(--text-4);
+    margin-top: 10px;
+    font-style: italic;
 }
 
 /* ── MULTI-CURRENCY BUTTON GROUP STYLES ── */

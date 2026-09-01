@@ -32,9 +32,9 @@ if (ci) {
     ci.innerHTML = full + full;
 }
 
-// COUNTDOWN — runs from 1 August 2026, 00:00:00 to 1 September 2026, 00:59:59
-const REG_START = new Date('2026-08-01T00:00:00');
-const REG_CLOSE = new Date('2026-09-01T00:59:59');
+// COUNTDOWN — runs from 1 Sept, 00:00:00 to 30 September 2026, 00:59:59
+const REG_START = new Date('2026-09-01T00:00:00');
+const REG_CLOSE = new Date('2026-09-30T00:59:59');
 
 function updateCountdown() {
     const now = new Date();
@@ -253,3 +253,53 @@ function toggleAudio(audioId, btn) {
     if (fill) fill.style.width = '0%';
   };
 }
+
+/**
+ * Switches active pricing slab and smoothly scrolls into view.
+ * Works for both top nav buttons and wizard cards.
+ * 
+ * @param {string} targetId - ID of the target slab (e.g., 'group-1', 'abi')
+ * @param {Event} [event] - The click event object
+ */
+function showSlab(targetId, event) {
+  if (event) event.preventDefault();
+
+  // 1. Hide all slabs
+  const allSlabs = document.querySelectorAll('.islab');
+  allSlabs.forEach(slab => {
+    slab.classList.remove('active-slab');
+  });
+
+  // 2. Activate selected slab
+  const selectedSlab = document.getElementById(targetId);
+  if (selectedSlab) {
+    selectedSlab.classList.add('active-slab');
+  }
+
+  // 3. Update button active states in the slab-nav-buttons bar
+  const allNavButtons = document.querySelectorAll('.slab-nav-btn');
+  allNavButtons.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('href') === `#${targetId}`) {
+      btn.classList.add('active');
+    }
+  });
+
+  // 4. Update the URL hash without triggering default jumpy page scroll
+  history.pushState(null, null, `#${targetId}`);
+
+  // 5. Smoothly scroll down to the active slab
+  if (selectedSlab) {
+    selectedSlab.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+// Automatically load slab on page load based on URL hash (or default to 'group-1')
+document.addEventListener('DOMContentLoaded', () => {
+  const currentHash = window.location.hash.replace('#', '');
+  if (currentHash && document.getElementById(currentHash)) {
+    showSlab(currentHash);
+  } else {
+    showSlab('group-1');
+  }
+});
