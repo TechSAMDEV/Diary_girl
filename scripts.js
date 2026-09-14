@@ -1,12 +1,26 @@
-// COUNTER
+// COUNTER ANIMATION
 function animateCounter() {
-    let n = 0; const el = document.getElementById('counter');
+    let n = 0;
+    const el = document.getElementById('counter');
     if (!el) return;
-    const t = setInterval(() => { n += 3; if (n >= 250) { n = 250; clearInterval(t) } el.textContent = n }, 20);
+    const t = setInterval(() => {
+        n += 3;
+        if (n >= 250) {
+            n = 250;
+            clearInterval(t);
+        }
+        el.textContent = n;
+    }, 20);
 }
+
 const cEl = document.getElementById('counter');
 if (cEl) {
-    const obs = new IntersectionObserver(e => { if (e[0].isIntersecting) { animateCounter(); obs.disconnect() } }, { threshold: .3 });
+    const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            animateCounter();
+            obs.disconnect();
+        }
+    }, { threshold: 0.3 });
     obs.observe(cEl);
 }
 
@@ -24,7 +38,7 @@ document.querySelectorAll('.fade-in-section').forEach(section => {
     fadeInObserver.observe(section);
 });
 
-// COUNTRIES
+// COUNTRIES MARQUEE STRIP
 const countries = ['United Kingdom', 'United States', 'China', 'Russia', 'Canada', 'Ireland', 'Nigeria', 'Lithuania', 'Poland', 'Portugal', 'Netherlands', 'Germany'];
 const ci = document.getElementById('countries-inner');
 if (ci) {
@@ -32,7 +46,7 @@ if (ci) {
     ci.innerHTML = full + full;
 }
 
-// COUNTDOWN — runs from 1 Sept, 00:00:00 to 30 September 2026, 00:59:59
+// COUNTDOWN TIMER
 const REG_START = new Date('2026-09-01T00:00:00');
 const REG_CLOSE = new Date('2026-09-30T00:59:59');
 
@@ -45,10 +59,9 @@ function updateCountdown() {
     const noteEl = document.getElementById('countdown-note');
     if (!dEl) return;
 
-    // Check if it hasn't started yet
     if (now < REG_START) {
         dEl.textContent = '0'; hEl.textContent = '0'; mEl.textContent = '0'; sEl.textContent = '0';
-        if (noteEl) noteEl.textContent = 'Registration opens 1 August 2026 and closes 1 September 2026, 00:59 AM';
+        if (noteEl) noteEl.textContent = 'Registration opens 1 September 2026 and closes 30 September 2026, 00:59 PM';
         return;
     }
 
@@ -73,32 +86,32 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// CURRENCY
+// CURRENCY CONVERSION SWITCHER
 const RATES = { NGN: 1, USD: 1540, EUR: 1680, GBP: 1940 };
 const SYMS = { NGN: '₦', USD: '$', EUR: '€', GBP: '£' };
-let ACR = 'NGN';
+
 function setCur(cur, btn) {
-    ACR = cur;
     document.querySelectorAll('.cur-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
-    const sym = SYMS[cur];
+    const sym = SYMS[cur] || '₦';
+
     document.querySelectorAll('.pc-price').forEach(el => {
         const ngn = parseInt(el.dataset.ngn || 0);
-        const disc = parseInt(el.dataset.disc || 0);
-        const n = parseInt(el.dataset.n || 0);
         const pv = el.querySelector('.pv');
-        if (pv) pv.textContent = sym + Math.round((n > 0 ? disc : ngn) / RATES[cur]).toLocaleString();
+        if (pv && ngn) {
+            const converted = Math.round(ngn / RATES[cur]);
+            pv.textContent = sym + converted.toLocaleString();
+        }
     });
 }
 
-// CURRICULUM ACCORDION
+// ACCORDIONS
 function toggleCurr(card) {
     const open = card.classList.contains('open');
     document.querySelectorAll('.curr-card').forEach(c => c.classList.remove('open'));
     if (!open) card.classList.add('open');
 }
 
-// FAQ ACCORDION
 function toggleFaq(btn) {
     const item = btn.parentElement;
     const open = item.classList.contains('open');
@@ -106,200 +119,164 @@ function toggleFaq(btn) {
     if (!open) item.classList.add('open');
 }
 
-// Automatically update copyright year
-document.getElementById('current-year').textContent = new Date().getFullYear();
+// COPYRIGHT YEAR
+const yearEl = document.getElementById('current-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-
-function scrollToCard(targetId) {
-    const el = document.getElementById(targetId);
-    if (el) {
-        const yOffset = -50; // Negative moves it down; positive moves it up
-        const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
-
-        el.scrollIntoView({ behavior: 'smooth', block: 'start', top: "y"});
-    }
-}
-
+// REVIEWS CAROUSEL & AUDIO/VIDEO SYNC
 document.addEventListener('DOMContentLoaded', () => {
-  const track = document.getElementById('carouselTrack');
-  const slides = Array.from(track.children);
-  const indicatorsContainer = document.getElementById('carouselIndicators');
-  let currentIndex = 0;
+    const track = document.getElementById('carouselTrack');
+    if (!track) return;
 
-  // Touch / Drag variables
-  let startX = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
-  let isDragging = false;
+    const slides = Array.from(track.children);
+    const indicatorsContainer = document.getElementById('carouselIndicators');
+    let currentIndex = 0;
 
-  // Render Carousel Dots dynamically
-  slides.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.classList.add('carousel-dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(index));
-    indicatorsContainer.appendChild(dot);
-  });
-
-  const dots = Array.from(indicatorsContainer.children);
-
-  function updateCarousel() {
-    // Translate the track position
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    // Update active dot
-    dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentIndex);
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        if (indicatorsContainer) indicatorsContainer.appendChild(dot);
     });
 
-    // Pause all playing media when changing slides
-    document.querySelectorAll('video, audio').forEach(media => media.pause());
-    document.querySelectorAll('.mini-v-play').forEach(btn => btn.innerText = '▶');
-  }
+    const dots = indicatorsContainer ? Array.from(indicatorsContainer.children) : [];
 
-  window.moveCarousel = function(direction) {
-    currentIndex += direction;
-    if (currentIndex < 0) {
-      currentIndex = slides.length - 1;
-    } else if (currentIndex >= slides.length) {
-      currentIndex = 0;
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentIndex);
+        });
+
+        document.querySelectorAll('video, audio').forEach(media => media.pause());
+        document.querySelectorAll('.mini-v-play').forEach(btn => btn.innerText = '▶');
     }
-    updateCarousel();
-  };
 
-  function goToSlide(index) {
-    currentIndex = index;
-    updateCarousel();
-  }
+    window.moveCarousel = function (direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+            currentIndex = slides.length - 1;
+        } else if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    };
 
-  // --- Touch & Swipe Gesture Logic ---
-  const container = document.getElementById('carouselTrackContainer');
-
-  container.addEventListener('touchstart', touchStart);
-  container.addEventListener('touchend', touchEnd);
-  container.addEventListener('touchmove', touchMove);
-
-  function touchStart(e) {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-  }
-
-  function touchMove(e) {
-    if (!isDragging) return;
-    const currentX = e.touches[0].clientX;
-    const diffX = currentX - startX;
-    
-    // Slight drag feedback resistance
-    if (Math.abs(diffX) > 10) {
-      track.style.transform = `translateX(calc(-${currentIndex * 100}% + ${diffX}px))`;
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
     }
-  }
 
-  function touchEnd(e) {
-    if (!isDragging) return;
-    isDragging = false;
-    const endX = e.changedTouches[0].clientX;
-    const diffX = endX - startX;
+    // Touch & Swipe Logic
+    const container = document.getElementById('carouselTrackContainer');
+    if (!container) return;
 
-    if (diffX < -50) {
-      moveCarousel(1); // Swipe left -> Next slide
-    } else if (diffX > 50) {
-      moveCarousel(-1); // Swipe right -> Prev slide
-    } else {
-      updateCarousel(); // Reset position if swipe threshold was not met
-    }
-  }
+    let startX = 0;
+    let isDragging = false;
+
+    container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+
+    container.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const currentX = e.touches[0].clientX;
+        const diffX = currentX - startX;
+        if (Math.abs(diffX) > 10) {
+            track.style.transform = `translateX(calc(-${currentIndex * 100}% + ${diffX}px))`;
+        }
+    });
+
+    container.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const endX = e.changedTouches[0].clientX;
+        const diffX = endX - startX;
+
+        if (diffX < -50) {
+            moveCarousel(1);
+        } else if (diffX > 50) {
+            moveCarousel(-1);
+        } else {
+            updateCarousel();
+        }
+    });
 });
 
-// --- Audio Player Toggle & Real-time Progress Fill ---
+// AUDIO PLAYER TOGGLE
 function toggleAudio(audioId, btn) {
-  const audio = document.getElementById(audioId);
-  const fill = document.getElementById(`fill-${audioId}`);
-  const durLabel = document.getElementById(`dur-${audioId}`);
+    const audio = document.getElementById(audioId);
+    if (!audio) return;
 
-  if (audio.paused) {
-    // Pause any other active audio
-    document.querySelectorAll('audio').forEach(a => {
-      if (a !== audio) {
-        a.pause();
-        const otherBtn = a.parentElement.querySelector('.mini-v-play');
-        if (otherBtn) otherBtn.innerText = '▶';
-      }
+    const fill = document.getElementById(`fill-${audioId}`);
+    const durLabel = document.getElementById(`dur-${audioId}`);
+
+    if (audio.paused) {
+        document.querySelectorAll('audio').forEach(a => {
+            if (a !== audio) {
+                a.pause();
+                const otherBtn = a.parentElement.querySelector('.mini-v-play');
+                if (otherBtn) otherBtn.innerText = '▶';
+            }
+        });
+        audio.play();
+        btn.innerText = '❚❚';
+    } else {
+        audio.pause();
+        btn.innerText = '▶';
+    }
+
+    audio.ontimeupdate = () => {
+        if (audio.duration) {
+            const pct = (audio.currentTime / audio.duration) * 100;
+            if (fill) fill.style.width = `${pct}%`;
+
+            const remainingSecs = Math.floor(audio.duration - audio.currentTime);
+            const mins = Math.floor(remainingSecs / 60);
+            const secs = Math.floor(remainingSecs % 60).toString().padStart(2, '0');
+            if (durLabel) durLabel.innerText = `${mins}:${secs}`;
+        }
+    };
+
+    audio.onended = () => {
+        btn.innerText = '▶';
+        if (fill) fill.style.width = '0%';
+    };
+}
+
+// SLAB SWITCHER WIZARD & DEEP LINKING
+function showSlab(targetId, event) {
+    if (event) event.preventDefault();
+
+    const allSlabs = document.querySelectorAll('.islab');
+    allSlabs.forEach(slab => slab.classList.remove('active-slab'));
+
+    const selectedSlab = document.getElementById(targetId);
+    if (selectedSlab) {
+        selectedSlab.classList.add('active-slab');
+    }
+
+    const allNavButtons = document.querySelectorAll('.slab-nav-btn');
+    allNavButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('href') === `#${targetId}`) {
+            btn.classList.add('active');
+        }
     });
 
-    audio.play();
-    btn.innerText = '❚❚';
-  } else {
-    audio.pause();
-    btn.innerText = '▶';
-  }
+    history.pushState(null, null, `#${targetId}`);
 
-  // Sync progress bar fill dynamically
-  audio.ontimeupdate = () => {
-    if (audio.duration) {
-      const pct = (audio.currentTime / audio.duration) * 100;
-      if (fill) fill.style.width = `${pct}%`;
-      
-      // Update time display countdown
-      const remainingSecs = Math.floor(audio.duration - audio.currentTime);
-      const mins = Math.floor(remainingSecs / 60);
-      const secs = Math.floor(remainingSecs % 60).toString().padStart(2, '0');
-      if (durLabel) durLabel.innerText = `${mins}:${secs}`;
+    if (selectedSlab) {
+        selectedSlab.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  };
-
-  audio.onended = () => {
-    btn.innerText = '▶';
-    if (fill) fill.style.width = '0%';
-  };
 }
 
-/**
- * Switches active pricing slab and smoothly scrolls into view.
- * Works for both top nav buttons and wizard cards.
- * 
- * @param {string} targetId - ID of the target slab (e.g., 'group-1', 'abi')
- * @param {Event} [event] - The click event object
- */
-function showSlab(targetId, event) {
-  if (event) event.preventDefault();
-
-  // 1. Hide all slabs
-  const allSlabs = document.querySelectorAll('.islab');
-  allSlabs.forEach(slab => {
-    slab.classList.remove('active-slab');
-  });
-
-  // 2. Activate selected slab
-  const selectedSlab = document.getElementById(targetId);
-  if (selectedSlab) {
-    selectedSlab.classList.add('active-slab');
-  }
-
-  // 3. Update button active states in the slab-nav-buttons bar
-  const allNavButtons = document.querySelectorAll('.slab-nav-btn');
-  allNavButtons.forEach(btn => {
-    btn.classList.remove('active');
-    if (btn.getAttribute('href') === `#${targetId}`) {
-      btn.classList.add('active');
-    }
-  });
-
-  // 4. Update the URL hash without triggering default jumpy page scroll
-  history.pushState(null, null, `#${targetId}`);
-
-  // 5. Smoothly scroll down to the active slab
-  if (selectedSlab) {
-    selectedSlab.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-}
-
-// Automatically load slab on page load based on URL hash (or default to 'group-1')
 document.addEventListener('DOMContentLoaded', () => {
-  const currentHash = window.location.hash.replace('#', '');
-  if (currentHash && document.getElementById(currentHash)) {
-    showSlab(currentHash);
-  } else {
-    showSlab('group-1');
-  }
+    const currentHash = window.location.hash.replace('#', '');
+    if (currentHash && document.getElementById(currentHash)) {
+        showSlab(currentHash);
+    } else {
+        showSlab('group-1');
+    }
 });

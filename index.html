@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- 1. GOOGLE SEARCH CONSOLE VERIFICATION TAG -->
-
   <meta name="google-site-verification" content="quYTK-aRMoSt_TGIzsxMu7idU3yJDQBp4bOobB-KWu4" />
   <title>Become a High-Value Data Professional | Diary of a Girl in Tech</title>
 
@@ -23,12 +22,11 @@
 
     gtag('config', 'G-XHNFMJEJ0D');
   </script>
-
 </head>
 
 <body>
 
-  <!-- NAV (Fixed: added fade-in-section class so observer animates it into view) -->
+  <!-- NAV -->
   <nav class="site-nav fade-in-section">
     <div class="container-fluid px-3 text-center">
       <div class="nav-content-wrap">
@@ -130,16 +128,13 @@
         </div>
         <p class="countdown-note" id="countdown-note">Registration closes 30 September 2026, 00:59 PM</p>
       </div>
+    </div>
   </section>
 
-  <!--
-    ==========================================================================
-   ONBOARDING & CLARITY SESSION
-    ==========================================================================
-  -->
-  <section class="onboarding-banner-section">
+  <!-- ONBOARDING & CLARITY SESSION -->
+  <section class="onboarding-banner-section fade-in-section">
     <div class="onboarding-content">
-      <span class="onboarding-tag">ONBOARDING & CLARITY SESSION</span>
+      <span class="onboarding-tag">ONBOARDING &amp; CLARITY SESSION</span>
       <h2 class="onboarding-title">Live Kick-Off: 1 October 2026 at 7:30 PM (Nigerian Time)</h2>
       <p class="onboarding-desc">
         All enrolled students across every track join us live on
@@ -158,7 +153,6 @@
 
       <!-- Carousel Container -->
       <div class="reviews-carousel-wrapper">
-
         <!-- Navigation Buttons -->
         <button class="carousel-nav prev" aria-label="Previous Slide" onclick="moveCarousel(-1)">❮</button>
         <button class="carousel-nav next" aria-label="Next Slide" onclick="moveCarousel(1)">❯</button>
@@ -170,7 +164,6 @@
             <!-- Review Slide 1 -->
             <div class="review-slide">
               <div class="review-card-group">
-                <!-- Video Box -->
                 <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
                   <video id="vid-1" controls preload="metadata"
                     poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%237d523a'/><stop offset='100%' stop-color='%232a160c'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/></svg>"
@@ -185,7 +178,6 @@
                   <div class="mini-vid-detail">Nigeria</div>
                 </div>
 
-                <!-- Voice Note Box -->
                 <div class="mini-voice-box">
                   <div class="mini-v-av" style="background:linear-gradient(135deg,#5c3520,#9a6040)">C</div>
                   <div class="mini-v-content">
@@ -209,12 +201,11 @@
             <!-- Review Slide 2 -->
             <div class="review-slide">
               <div class="review-card-group">
-                <!-- Video Box -->
                 <div class="mini-vid-box" style="position: relative; overflow: hidden; background: #000;">
-                  <video id="vid-1" controls preload="metadata"
+                  <video id="vid-2" controls preload="metadata"
                     poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%237d523a'/><stop offset='100%' stop-color='%232a160c'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/></svg>"
                     style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
-                    onerror="console.log('Video 1 failed to load')">
+                    onerror="console.log('Video 2 failed to load')">
                     <source src="./mps/vid_2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
@@ -224,7 +215,6 @@
                   <div class="mini-vid-detail">Dubai, UAE</div>
                 </div>
 
-                <!-- Voice Note Box -->
                 <div class="mini-voice-box">
                   <div class="mini-v-av" style="background:linear-gradient(135deg,#3d5c3a,#6a9460)">S</div>
                   <div class="mini-v-content">
@@ -245,8 +235,6 @@
               </div>
             </div>
 
-            <!-- Add additional .review-slide elements here seamlessly -->
-
           </div>
         </div>
 
@@ -260,79 +248,72 @@
   <section class="sec instructors fade-in-section" id="instructors">
     <div class="container">
       <div class="sec-title text-center">Choose Your <em>Learning Experience</em></div>
-      <div class="d-flex gap-2 flex-wrap align-items-center justify-content-center mb-5">
-        <span class="cur-l">Price in</span>
+      <div class="d-flex gap-2 flex-wrap align-items-center justify-content-center mb-4">
+        <span class="cur-l">Price Currency:</span>
+        <button class="cur-btn active" onclick="setCur('NGN', this)">NGN (₦)</button>
+        <button class="cur-btn" onclick="setCur('USD', this)">USD ($)</button>
+        <button class="cur-btn" onclick="setCur('GBP', this)">GBP (£)</button>
       </div>
 
       <!-- TRACK SELECTOR WIZARD -->
       <div class="track-selector-wrap mb-5">
         <div class="track-selector-title">Not Sure Which Track Fits You?</div>
         <div class="track-selector-track">
-
-          <!-- Option 1: Group Batch 1 -->
           <a href="#group-1" class="track-sel-card" onclick="showSlab('group-1', event)">
-            <div class="ts-c-head">Beginner, Want full Structure?</div>
+            <div class="ts-c-head">Beginner &amp; Want Structure?</div>
             <div class="ts-c-sub">Excel + Power BI + SQL + AI Automation + Prompt Engineering <b>(GROUP 1)</b></div>
+            <div class="ts-c-price pc-price" data-ngn="215000"><span class="pv">₦215,000</span></div>
           </a>
 
-          <!-- Option 2: Group Batch 2 -->
           <a href="#group-2" class="track-sel-card" onclick="showSlab('group-2', event)">
-            <div class="ts-c-head">Beginner, Want full Structure?</div>
+            <div class="ts-c-head">Evening Learner &amp; Want Structure?</div>
             <div class="ts-c-sub">Excel + Power BI + SQL + AI Automation + Prompt Engineering <b>(GROUP 2)</b></div>
+            <div class="ts-c-price pc-price" data-ngn="215000"><span class="pv">₦215,000</span></div>
           </a>
 
-          <!-- Option 3: Abigail Private Coaching -->
           <a href="#abi" class="track-sel-card" onclick="showSlab('abi', event)">
-            <div class="ts-c-head">Need 1-on-1 Guidance & Flexibility?</div>
+            <div class="ts-c-head">Need 1-on-1 Guidance &amp; Flexibility?</div>
             <div class="ts-c-sub">Excel + Power BI + SQL + AI Automation + Prompt Engineering <b>(ABIGAIL PRIVATE)</b>
             </div>
+            <div class="ts-c-price pc-price" data-ngn="350000"><span class="pv">₦350,000</span></div>
           </a>
 
-
-          <!-- Option 4: Peter Private Coaching -->
           <a href="#private-2" class="track-sel-card" onclick="showSlab('private-2', event)">
             <div class="ts-c-head">Private Mentorship with Associate Lead?</div>
             <div class="ts-c-sub">Excel + Power BI + SQL + AI Automation + Prompt Engineering <b>(PETER PRIVATE)</b>
             </div>
+            <div class="ts-c-price pc-price" data-ngn="302000"><span class="pv">₦302,000</span></div>
           </a>
 
-          <!-- Option 5: Python Group -->
           <a href="#private-1" class="track-sel-card" onclick="showSlab('private-1', event)">
-            <div class="ts-c-head">Already Know Excel + Power BI + SQL?</div>
+            <div class="ts-c-head">Already Know Excel, Power BI &amp; SQL?</div>
             <div class="ts-c-sub">Python for Data Analysis + AI Automation + Prompt Engineering <b>(PYTHON GROUP)</b>
             </div>
+            <div class="ts-c-price pc-price" data-ngn="257000"><span class="pv">₦257,000</span></div>
           </a>
         </div>
       </div>
 
-      <!-- SLAB TABS CONTROL -->
-      <!-- <div class="slab-nav-buttons">
-      <a href="#group-1" class="slab-nav-btn active" onclick="showSlab('group-1', event)">Group Batch 1</a>
-      <a href="#group-2" class="slab-nav-btn" onclick="showSlab('group-2', event)">Group Batch 2</a>
-      <a href="#abi" class="slab-nav-btn" onclick="showSlab('abi', event)">Abigail Private</a>
-      <a href="#private-1" class="slab-nav-btn" onclick="showSlab('private-1', event)">Python Group</a>
-      <a href="#private-2" class="slab-nav-btn" onclick="showSlab('private-2', event)">Peter Private</a>
-    </div> -->
-
+      <!-- GROUP 1 -->
       <!-- GROUP 1 -->
       <div class="islab" id="group-1">
         <div class="spot-badge">10 SPOTS ONLY</div>
         <h3>GROUP PROGRAMME · BATCH 1 (AFTERNOON)</h3>
-        <p><strong>Excel + Power BI + SQL + Prompt Engineering & AI Automation — Group Class</strong></p>
-        <p class="slab-schedule">Monday & Wednesday · 2:00 PM – 4:00 PM (Nigerian Time)</p>
+        <p><strong>Excel + Power BI + SQL + Prompt Engineering &amp; AI Automation — Group Class</strong></p>
+        <p class="slab-schedule">Monday &amp; Wednesday · 2:00 PM – 4:00 PM (Nigerian Time)</p>
         <p class="slab-meta">
           11 Weeks · Live sessions, all recorded<br>
           Start: <strong>5 October 2026</strong> · End: <strong>16 December 2026</strong>
         </p>
 
         <div class="price-box">
-          <div class="slab-price" data-ngn="₦215,000" data-usd="$195" data-gbp="£145">₦215,000</div>
+          <div class="slab-price pc-price" data-ngn="215000"><span class="pv">₦215,000</span></div>
           <div class="pay-buttons-group">
-            <a href="https://flutterwave.com/pay/o7jhuqzuk3i4" class="pay-btn-link" target="_blank">GET STARTED</a>
+            <a href="payment-support.html?course=Group%20Programme%20%C2%B7%20Batch%201%20(Afternoon)&price=215000"
+              target="_blank" class="pay-btn-link mt-2">GET STARTED</a>
           </div>
           <p class="post-pay-note">
-            *After payment, you're automatically added to the private programme group, where you'll receive
-            onboarding, class updates, and all programme details.*
+            *Click above to view bank details and submit your payment receipt.*
           </p>
         </div>
       </div>
@@ -341,110 +322,78 @@
       <div class="islab" id="group-2">
         <div class="spot-badge">10 SPOTS ONLY</div>
         <h3>GROUP PROGRAMME · BATCH 2 (EVENING)</h3>
-        <p><strong>Excel + Power BI + SQL + Prompt Engineering & AI Automation — Group Class</strong></p>
-        <p class="slab-schedule">Friday & Saturday · 8:00 PM – 10:00 PM (Nigerian Time)</p>
+        <p><strong>Excel + Power BI + SQL + Prompt Engineering &amp; AI Automation — Group Class</strong></p>
+        <p class="slab-schedule">Friday &amp; Saturday · 8:00 PM – 10:00 PM (Nigerian Time)</p>
         <p class="slab-meta">
           11 Weeks · Live sessions, all recorded<br>
           Start: <strong>2 October 2026</strong> · End: <strong>12 December 2026</strong>
         </p>
 
         <div class="price-box">
-          <div class="slab-price" data-ngn="₦215,000" data-usd="$195" data-gbp="£145">₦215,000</div>
+          <div class="slab-price pc-price" data-ngn="215000"><span class="pv">₦215,000</span></div>
           <div class="pay-buttons-group">
-            <a href="https://flutterwave.com/pay/jyjw5cszodbu" class="pay-btn-link" target="_blank">GET STARTED</a>
+            <a href="payment-support.html?course=Group%20Programme%20%C2%B7%20Batch%202%20(Evening)&price=215000"
+              target="_blank" class="pay-btn-link mt-2">GET STARTED</a>
           </div>
           <p class="post-pay-note">
-            *After payment, you're automatically added to the private programme group, where you'll receive
-            onboarding, class updates, and all programme details.*
+            *Click above to view bank details and submit your payment receipt.*
           </p>
         </div>
       </div>
 
-      <!-- ABIGAIL -->
+      <!-- ABIGAIL PRIVATE -->
       <div class="islab" id="abi">
         <div class="spot-badge">5 SPOTS ONLY</div>
         <h3>ABIGAIL'S PRIVATE SESSIONS</h3>
-
-        <div class="instructor-bio">
-          <div class="instructor-title">LEAD INSTRUCTOR</div>
-          <div class="instructor-name">ABIGAIL KAYIANI YASHIYI</div>
-          <p class="instructor-desc">
-            Abigail has trained aspiring data professionals, helping students build career-ready skills, strong
-            portfolios, and confidence for global opportunities. She is passionate about preparing analysts for both
-            well-known and overlooked opportunities in data through practical, result-driven training.
-          </p>
-        </div>
-
-        <p><strong>Excel + Power BI + SQL + Prompt Engineering & AI Automation — Private Coaching</strong></p>
-        <p class="slab-schedule">Wednesday, Thursday, Saturday · Twice-weekly (1.5 hrs) or Once-weekly (2.5 hrs)</p>
-        <p class="slab-meta">
-          11 Weeks · Start: <strong>Week of 5 October 2026</strong> · End: <strong>Week of 21 December 2026</strong>
-        </p>
+        <p><strong>Excel + Power BI + SQL + Prompt Engineering &amp; AI Automation — Private Coaching</strong></p>
 
         <div class="price-box">
-          <div class="slab-price" data-ngn="₦350,000" data-usd="$265" data-gbp="£195">₦350,000</div>
+          <div class="slab-price pc-price" data-ngn="350000"><span class="pv">₦350,000</span></div>
           <div class="pay-buttons-group">
-            <a href="https://flutterwave.com/pay/hhpb4aifffke" class="pay-btn-link" target="_blank">GET STARTED</a>
+            <a href="payment-support.html?course=Abigail's%20Private%20Sessions&price=350000" target="_blank"
+              class="pay-btn-link mt-2">GET STARTED</a>
           </div>
           <p class="post-pay-note">
-            *After payment, you'll be directed to your private calendar to book your weekly session time, based on
-            your chosen days and format.*
+            *Click above to view bank details and submit your payment receipt.*
           </p>
         </div>
       </div>
 
-      <!-- PRIVATE 1 (PYTHON) -->
+      <!-- PYTHON GROUP -->
       <div class="islab" id="private-1">
         <div class="spot-badge">4 SPOTS ONLY</div>
         <h3>PYTHON GROUP PROGRAMME</h3>
         <p><strong>Python for Data Analysis — Group Class</strong></p>
-        <p class="slab-schedule">Tuesday and Thursday 7pm to 9pm · 2 sessions per week, 2 hours per session</p>
-        <p class="slab-meta">8 Weeks · Start: <strong>5 October 2026</strong></p>
 
         <div class="price-box">
-          <div class="slab-price" data-ngn="₦257,000" data-usd="$195" data-gbp="£145">₦257,000</div>
+          <div class="slab-price pc-price" data-ngn="257000"><span class="pv">₦257,000</span></div>
           <div class="pay-buttons-group">
-            <a href="https://flutterwave.com/pay/5yscty42kham" class="pay-btn-link" target="_blank">GET STARTED</a>
+            <a href="payment-support.html?course=Python%20Group%20Programme&price=257000" target="_blank"
+              class="pay-btn-link mt-2">GET STARTED</a>
           </div>
           <p class="post-pay-note">
-            *After payment, you're automatically added to the Python programme group, where you'll receive class
-            information, onboarding, and updates.*
+            *Click above to view bank details and submit your payment receipt.*
           </p>
         </div>
       </div>
 
-      <!-- PRIVATE 2 (PETER) -->
+      <!-- PETER PRIVATE -->
       <div class="islab" id="private-2">
         <div class="spot-badge">7 SPOTS ONLY</div>
         <h3>PRIVATE COACHING: ASSOCIATE INSTRUCTOR</h3>
-        <div class="instructor-bio">
-          <div class="instructor-title">LEAD INSTRUCTOR</div>
-          <div class="instructor-name">Peter Ayim</div>
-          <p class="instructor-desc">
-            Peter Ayim is a Data Analysis Instructor with 3+ years of experience in Excel, SQL and Power BI. With a
-            strong Mathematics background, he helps students build analytical thinking and job-ready data skills.
-          </p>
-        </div>
-        <p><strong>Excel + Power BI + SQL + Prompt Engineering & AI Automation For Data Analysis</strong></p>
-        <p class="slab-schedule">
-          Tuesday, Wednesday, Friday, Saturday, Sunday · Twice-weekly (1.5 hrs) or Once-weekly (2.5 hrs) — your choice
-        </p>
-        <p class="slab-meta">
-          11 Weeks · Start: <strong>Week of 5 October 2026</strong> · End: <strong>Week of 21 December 2026</strong>
-        </p>
+        <p><strong>Excel + Power BI + SQL + Prompt Engineering &amp; AI Automation</strong></p>
 
         <div class="price-box">
-          <div class="slab-price" data-ngn="₦302,000" data-usd="$302" data-gbp="£170">₦302,000</div>
+          <div class="slab-price pc-price" data-ngn="302000"><span class="pv">₦302,000</span></div>
           <div class="pay-buttons-group">
-            <a href="https://flutterwave.com/pay/earolayj9xvs" class="pay-btn-link" target="_blank">GET STARTED</a>
+            <a href="payment-support.html?course=Peter%20Private%20Coaching&price=302000" target="_blank"
+              class="pay-btn-link mt-2">GET STARTED</a>
           </div>
           <p class="post-pay-note">
-            *After payment, you'll be directed to your private calendar to book your weekly session time, based on
-            your chosen days and format.*
+            *Click above to view bank details and submit your payment receipt.*
           </p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -471,11 +420,11 @@
             </div>
             <div class="curr-body">
               <div class="row row-cols-1 row-cols-md-2 curr-body-inner">
-                <div class="col curr-item">Retail &amp; E-commerce (Excel Fundamentals) </div>
-                <div class="col curr-item">Banking &amp; FinTech (Data Cleaning &amp; Preparation) </div>
-                <div class="col curr-item">Healthcare (Logical Functions &amp; Business Analysis) </div>
-                <div class="col curr-item">Supply Chain &amp; Logistics (Pivot Tables, Charts &amp; Dashboards) </div>
-                <div class="col curr-item"> SaaS (Executive Capstone Project)</div>
+                <div class="col curr-item">Retail &amp; E-commerce (Excel Fundamentals)</div>
+                <div class="col curr-item">Banking &amp; FinTech (Data Cleaning &amp; Preparation)</div>
+                <div class="col curr-item">Healthcare (Logical Functions &amp; Business Analysis)</div>
+                <div class="col curr-item">Supply Chain &amp; Logistics (Pivot Tables, Charts &amp; Dashboards)</div>
+                <div class="col curr-item">SaaS (Executive Capstone Project)</div>
               </div>
             </div>
           </div>
@@ -495,12 +444,12 @@
               <div class="row row-cols-1 row-cols-md-2 curr-body-inner">
                 <div class="col curr-item">Retail &amp; E-commerce (Power BI Fundamentals &amp; Connecting to Data)
                 </div>
-                <div class="col curr-item"> Banking &amp; FinTech (Power Query, Data Cleaning &amp; Data Transformation)
+                <div class="col curr-item">Banking &amp; FinTech (Power Query, Data Cleaning &amp; Data Transformation)
                 </div>
                 <div class="col curr-item">Healthcare (Data Modelling, Relationships, Star Schema &amp; DAX
-                  Calculations) </div>
+                  Calculations)</div>
                 <div class="col curr-item">Supply Chain &amp; Logistics (Interactive Dashboards, KPI Reporting &amp;
-                  Data Storytelling) </div>
+                  Data Storytelling)</div>
                 <div class="col curr-item">SaaS (Executive Dashboard, Power BI Service &amp; Capstone Project)</div>
               </div>
             </div>
@@ -520,13 +469,12 @@
             <div class="curr-body">
               <div class="row row-cols-1 row-cols-md-2 curr-body-inner">
                 <div class="col curr-item">Retail &amp; E-commerce (Database Fundamentals &amp; SQL Basics)</div>
-                <div class="col curr-item"> Banking &amp; FinTech (Data Retrieval, Filtering &amp; Data Exploration)
+                <div class="col curr-item">Banking &amp; FinTech (Data Retrieval, Filtering &amp; Data Exploration)
                 </div>
                 <div class="col curr-item">Healthcare (Business Analysis with SQL, Aggregations &amp; CASE Statements)
                 </div>
                 <div class="col curr-item">Supply Chain &amp; Logistics (Advanced SQL, Joins, CTEs, Window Functions
-                  &amp;
-                  Multi-Table Analysis) </div>
+                  &amp; Multi-Table Analysis)</div>
                 <div class="col curr-item">SaaS (Executive Business Case Study &amp; SQL Capstone Project)</div>
               </div>
             </div>
@@ -598,43 +546,50 @@
       <div class="sec-title text-center">Frequently <em>Asked</em></div>
       <div class="sec-rule c"></div>
       <div class="faq-list faq-slab mx-auto">
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need prior experience?<span
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Do I need prior experience?<span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>No experience needed. All courses start from scratch.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What happens immediately after I pay?<span
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What happens immediately after I pay?<span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>You'll receive onboarding details, your tutor's contact, and an invitation to the WhatsApp group.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does scheduling work for Peter's
-            private class?<span class="faq-icon">+</span></button>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How does scheduling work for Peter's private class?<span
+              class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>Book your first session through Peter's Calendly. A new link is sent every Sunday for the next week.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Will I get recordings of my sessions?<span
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Will I get recordings of my sessions?<span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>Yes. Every single session is recorded and kept permanently accessible.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What are the portfolio projects?<span
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What are the portfolio projects?<span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>Real industry-specific projects built to go directly onto your CV, LinkedIn and GitHub.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are the Automation and Prompt Engineering
-            modules really free?<span class="faq-icon">+</span></button>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Are the Automation and Prompt Engineering modules really
+            free?<span class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>Yes — both are included at no extra cost for all enrolled students.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What currencies can I pay in?<span
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What currencies can I pay in?<span
               class="faq-icon">+</span></button>
           <div class="faq-a">
             <p>Prices are displayed in Naira, USD, Euro, and Pounds via Paystack or Flutterwave.</p>
@@ -650,10 +605,10 @@
       <div class="refund-slab refund-inner">
         <h3>Refund Policy</h3>
         <p>
-          We are fully committed to delivering an excellent experience for you, If for any reason you need to cancel
+          We are fully committed to delivering an excellent experience for you. If for any reason you need to cancel
           before the first session on 1st October, we will issue a refund with 20% deducted to cover administrative
-          and
-          preparation costs already incurred. Once the first session has taken place, we are unable to offer refunds as
+          and preparation costs already incurred. Once the first session has taken place, we are unable to offer refunds
+          as
           the programme is already underway and resources have been fully committed. If you have any concerns at any
           point, please reach out directly and we will do everything we can to make it right.
         </p>
@@ -666,8 +621,7 @@
     <div class="container">
       <p>&copy;
         <span id="current-year"></span> <a href="https://techsam-portfolio.onrender.com/" target="_blank">TechSAM</a>.
-        Empowering the next generation of high-value tech
-        professionals.
+        Empowering the next generation of high-value tech professionals.
       </p>
       <div class="d-flex gap-4 justify-content-center f-links">
         <a href="mailto:samuelsuperguy@gmail.com" target="_blank">Email</a>
@@ -677,10 +631,9 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS bundle -->
+  <!-- Bootstrap JS bundle & Custom Script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="scripts.js"></script>
-
 
 </body>
 
